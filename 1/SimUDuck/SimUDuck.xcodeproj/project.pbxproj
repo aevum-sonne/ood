@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE04C191250B28480056470D /* DecoyDuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04C190250B28480056470D /* DecoyDuck.swift */; };
+		CE04C193250B284F0056470D /* RubberDuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04C192250B284F0056470D /* RubberDuck.swift */; };
+		CE04C195250B285B0056470D /* MallardDuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04C194250B285B0056470D /* MallardDuck.swift */; };
+		CE04C197250B28680056470D /* RedHeadDuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04C196250B28680056470D /* RedHeadDuck.swift */; };
+		CE04C199250B28760056470D /* ModelDuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04C198250B28760056470D /* ModelDuck.swift */; };
+		CE04C19D250B29BF0056470D /* FlyBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04C19C250B29BF0056470D /* FlyBehavior.swift */; };
+		CE04C19F250B29D00056470D /* QuackBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04C19E250B29D00056470D /* QuackBehavior.swift */; };
+		CE04C1A1250B29DD0056470D /* DanceBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04C1A0250B29DD0056470D /* DanceBehavior.swift */; };
+		CE9C822E2508A4B900039CB4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C822D2508A4B900039CB4 /* main.swift */; };
+		CE9C823525090E5500039CB4 /* Duck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C823425090E5500039CB4 /* Duck.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE9C82282508A4B900039CB4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CE04C190250B28480056470D /* DecoyDuck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoyDuck.swift; sourceTree = "<group>"; };
+		CE04C192250B284F0056470D /* RubberDuck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubberDuck.swift; sourceTree = "<group>"; };
+		CE04C194250B285B0056470D /* MallardDuck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallardDuck.swift; sourceTree = "<group>"; };
+		CE04C196250B28680056470D /* RedHeadDuck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedHeadDuck.swift; sourceTree = "<group>"; };
+		CE04C198250B28760056470D /* ModelDuck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDuck.swift; sourceTree = "<group>"; };
+		CE04C19C250B29BF0056470D /* FlyBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyBehavior.swift; sourceTree = "<group>"; };
+		CE04C19E250B29D00056470D /* QuackBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackBehavior.swift; sourceTree = "<group>"; };
+		CE04C1A0250B29DD0056470D /* DanceBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanceBehavior.swift; sourceTree = "<group>"; };
+		CE9C822A2508A4B900039CB4 /* SimUDuck */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SimUDuck; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE9C822D2508A4B900039CB4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		CE9C823425090E5500039CB4 /* Duck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duck.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE9C82272508A4B900039CB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE04C19A250B28820056470D /* Ducks */ = {
+			isa = PBXGroup;
+			children = (
+				CE9C823425090E5500039CB4 /* Duck.swift */,
+				CE04C198250B28760056470D /* ModelDuck.swift */,
+				CE04C194250B285B0056470D /* MallardDuck.swift */,
+				CE04C196250B28680056470D /* RedHeadDuck.swift */,
+				CE04C190250B28480056470D /* DecoyDuck.swift */,
+				CE04C192250B284F0056470D /* RubberDuck.swift */,
+			);
+			path = Ducks;
+			sourceTree = "<group>";
+		};
+		CE04C19B250B292E0056470D /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				CE04C19C250B29BF0056470D /* FlyBehavior.swift */,
+				CE04C19E250B29D00056470D /* QuackBehavior.swift */,
+				CE04C1A0250B29DD0056470D /* DanceBehavior.swift */,
+			);
+			path = Strategy;
+			sourceTree = "<group>";
+		};
+		CE9C82212508A4B900039CB4 = {
+			isa = PBXGroup;
+			children = (
+				CE9C822C2508A4B900039CB4 /* SimUDuck */,
+				CE9C822B2508A4B900039CB4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE9C822B2508A4B900039CB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE9C822A2508A4B900039CB4 /* SimUDuck */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE9C822C2508A4B900039CB4 /* SimUDuck */ = {
+			isa = PBXGroup;
+			children = (
+				CE04C19B250B292E0056470D /* Strategy */,
+				CE04C19A250B28820056470D /* Ducks */,
+				CE9C822D2508A4B900039CB4 /* main.swift */,
+			);
+			path = SimUDuck;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE9C82292508A4B900039CB4 /* SimUDuck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE9C82312508A4B900039CB4 /* Build configuration list for PBXNativeTarget "SimUDuck" */;
+			buildPhases = (
+				CE9C82262508A4B900039CB4 /* Sources */,
+				CE9C82272508A4B900039CB4 /* Frameworks */,
+				CE9C82282508A4B900039CB4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimUDuck;
+			productName = SimUDuck;
+			productReference = CE9C822A2508A4B900039CB4 /* SimUDuck */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE9C82222508A4B900039CB4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = User;
+				TargetAttributes = {
+					CE9C82292508A4B900039CB4 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = CE9C82252508A4B900039CB4 /* Build configuration list for PBXProject "SimUDuck" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE9C82212508A4B900039CB4;
+			productRefGroup = CE9C822B2508A4B900039CB4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE9C82292508A4B900039CB4 /* SimUDuck */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE9C82262508A4B900039CB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE04C197250B28680056470D /* RedHeadDuck.swift in Sources */,
+				CE04C19F250B29D00056470D /* QuackBehavior.swift in Sources */,
+				CE04C195250B285B0056470D /* MallardDuck.swift in Sources */,
+				CE9C823525090E5500039CB4 /* Duck.swift in Sources */,
+				CE04C1A1250B29DD0056470D /* DanceBehavior.swift in Sources */,
+				CE04C19D250B29BF0056470D /* FlyBehavior.swift in Sources */,
+				CE04C191250B28480056470D /* DecoyDuck.swift in Sources */,
+				CE04C199250B28760056470D /* ModelDuck.swift in Sources */,
+				CE04C193250B284F0056470D /* RubberDuck.swift in Sources */,
+				CE9C822E2508A4B900039CB4 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CE9C822F2508A4B900039CB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE9C82302508A4B900039CB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		CE9C82322508A4B900039CB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CE9C82332508A4B900039CB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE9C82252508A4B900039CB4 /* Build configuration list for PBXProject "SimUDuck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE9C822F2508A4B900039CB4 /* Debug */,
+				CE9C82302508A4B900039CB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE9C82312508A4B900039CB4 /* Build configuration list for PBXNativeTarget "SimUDuck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE9C82322508A4B900039CB4 /* Debug */,
+				CE9C82332508A4B900039CB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE9C82222508A4B900039CB4 /* Project object */;
+}
