@@ -20,8 +20,21 @@ class Stats
     }
     
     findAverageData(data: data)
+    
     printStats()
   }
+  
+//  func getMaxData() -> Double {
+//    return maxData
+//  }
+//
+//  func getMinData() -> Double {
+//    return minData
+//  }
+//
+//  func getAverageData() -> Double {
+//    return avgData
+//  }
   
   private func findAverageData(data: Double) {
     accData += data
@@ -41,11 +54,12 @@ class Stats
     self.type = type
   }
   
-  public var minData = Double.greatestFiniteMagnitude
-  public var maxData = -Double.greatestFiniteMagnitude
-  public var avgData: Double = 0
+  private var type: String
   
+  private var minData = Double.greatestFiniteMagnitude
+  private var maxData = -Double.greatestFiniteMagnitude
+  
+  private var avgData: Double = 0
   private var accData: Double = 0
   private var countAcc: UInt64 = 0
-  private var type: String
 }
