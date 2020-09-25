@@ -8,18 +8,32 @@
 
 import Foundation
 
+struct ObserverWithPriority<T>
+{
+  var priority: UInt64
+  var observer: IObserver<T>
+}
+
 class Observable<T> : IObservable<T>
 {
   typealias ObserverType = IObserver<T>
+  typealias PriorityObserverType = ObserverWithPriority<T>
   
-  var observers: [ObserverType] = []
+  // Autosorted elements by priority
+  private var observers: [PriorityObserverType] = [] {
+    didSet {
+      observers.sort { (lhs: PriorityObserverType, rhs: PriorityObserverType) -> Bool in
+        return lhs.priority < rhs.priority
+      }
+    }
+  }
   
-  func registerObserver(observer: inout ObserverType) {
-    observers.insert(observer, at: 0)
+  func registerObserver(priority: UInt64, observer: inout ObserverType) {
+    observers.insert(PriorityObserverType(priority: priority, observer: observer), at: 0)
   }
   
   func removeObserver(observer: inout ObserverType) {
-    if let index = observers.firstIndex(of: observer) {
+    if let index = observers.firstIndex(where: { $0.observer == observer }) {
       observers.remove(at: index)
     }
   }
@@ -27,8 +41,8 @@ class Observable<T> : IObservable<T>
   override func notifyObservers() {
     var data = getChangedData()
     
-    observers.forEach {observer in
-      observer.update(data: &data)
+    observers.forEach {element in
+      element.observer.update(data: &data)
     }
   }
   

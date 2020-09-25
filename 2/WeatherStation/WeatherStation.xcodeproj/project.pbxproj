@@ -96,21 +96,21 @@
 			isa = PBXGroup;
 			children = (
 				CEA37BE42517207F00505BDF /* ObserverPattern */,
-				CEA37BE32517205A00505BDF /* WeatherStats */,
+				CEA37BE32517205A00505BDF /* WeatherData */,
 				CEA2DF6C2511F4F000698882 /* main.swift */,
-				CEA37BE7251726E400505BDF /* Display */,
+				CEA37BE7251726E400505BDF /* Displays */,
 			);
 			path = WeatherStation;
 			sourceTree = "<group>";
 		};
-		CEA37BE32517205A00505BDF /* WeatherStats */ = {
+		CEA37BE32517205A00505BDF /* WeatherData */ = {
 			isa = PBXGroup;
 			children = (
 				CEA2DF762511F63300698882 /* WeatherData.swift */,
 				CEA37BDF2517201000505BDF /* Stats.swift */,
 				CEA37BDB25171FCD00505BDF /* WeatherInfo.swift */,
 			);
-			path = WeatherStats;
+			path = WeatherData;
 			sourceTree = "<group>";
 		};
 		CEA37BE42517207F00505BDF /* ObserverPattern */ = {
@@ -123,13 +123,13 @@
 			path = ObserverPattern;
 			sourceTree = "<group>";
 		};
-		CEA37BE7251726E400505BDF /* Display */ = {
+		CEA37BE7251726E400505BDF /* Displays */ = {
 			isa = PBXGroup;
 			children = (
 				CEA37BDD25171FFC00505BDF /* Display.swift */,
 				CEA37BE12517202700505BDF /* StatsDisplay.swift */,
 			);
-			path = Display;
+			path = Displays;
 			sourceTree = "<group>";
 		};
 		CEA37BED2517437500505BDF /* WeatherStationTests */ = {
