@@ -24,18 +24,6 @@ class Stats
     printStats()
   }
   
-//  func getMaxData() -> Double {
-//    return maxData
-//  }
-//
-//  func getMinData() -> Double {
-//    return minData
-//  }
-//
-//  func getAverageData() -> Double {
-//    return avgData
-//  }
-  
   private func findAverageData(data: Double) {
     accData += data
     countAcc += 1

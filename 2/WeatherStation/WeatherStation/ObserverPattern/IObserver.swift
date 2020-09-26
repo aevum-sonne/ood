@@ -16,10 +16,6 @@ class IObserver<T>: Equatable
     return UUID()
   }
 
-  func hash(into hasher: inout Hasher) {
-    hasher.combine(identifier)
-  }
-
   static func == (lhs: IObserver, rhs: IObserver) -> Bool {
     return lhs.identifier == rhs.identifier
   }

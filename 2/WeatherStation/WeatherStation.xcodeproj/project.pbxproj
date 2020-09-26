@@ -107,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA2DF762511F63300698882 /* WeatherData.swift */,
-				CEA37BDF2517201000505BDF /* Stats.swift */,
 				CEA37BDB25171FCD00505BDF /* WeatherInfo.swift */,
 			);
 			path = WeatherData;
@@ -127,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA37BDD25171FFC00505BDF /* Display.swift */,
+				CEA37BDF2517201000505BDF /* Stats.swift */,
 				CEA37BE12517202700505BDF /* StatsDisplay.swift */,
 			);
 			path = Displays;
