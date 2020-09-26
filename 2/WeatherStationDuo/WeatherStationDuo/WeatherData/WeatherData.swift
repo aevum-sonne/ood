@@ -35,7 +35,7 @@ class WeatherData : Observable<WeatherInfo>
   }
   
   override func getChangedData() -> WeatherInfo {
-    return WeatherInfo(temperature: getTemperature(), humidity: getHumidity(), pressure: getPressure())
+    return WeatherInfo(temperature: temperature, humidity: humidity, pressure: pressure)
   }
   
   private var temperature: Double = 0
