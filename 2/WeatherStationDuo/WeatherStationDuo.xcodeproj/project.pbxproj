@@ -98,7 +98,7 @@
 		CEA2DF6B2511F4F000698882 /* WeatherStationDuo */ = {
 			isa = PBXGroup;
 			children = (
-				CEA37BE42517207F00505BDF /* ObserverPattern */,
+				CEA37BE42517207F00505BDF /* Observer */,
 				CEA37BE32517205A00505BDF /* WeatherData */,
 				CEA2DF6C2511F4F000698882 /* main.swift */,
 				CEA37BE7251726E400505BDF /* Displays */,
@@ -115,14 +115,14 @@
 			path = WeatherData;
 			sourceTree = "<group>";
 		};
-		CEA37BE42517207F00505BDF /* ObserverPattern */ = {
+		CEA37BE42517207F00505BDF /* Observer */ = {
 			isa = PBXGroup;
 			children = (
 				CEA2DF742511F62500698882 /* Observable.swift */,
 				CEA37BE5251720E000505BDF /* IObservable.swift */,
 				CEA37BD925171F7E00505BDF /* IObserver.swift */,
 			);
-			path = ObserverPattern;
+			path = Observer;
 			sourceTree = "<group>";
 		};
 		CEA37BE7251726E400505BDF /* Displays */ = {

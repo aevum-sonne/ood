@@ -24,14 +24,6 @@ class StatsDisplayDuo : IObserver<WeatherInfo>
     
   init(internalSensor: WeatherData, externalSensor: WeatherData) {
     self.sensors = SensorDuo(internalSensor: internalSensor, externalSensor: externalSensor)
-    
-    super.init()
-  }
-  
-  required init() {
-    self.sensors = SensorDuo()
-    
-    super.init()
   }
   
   private var sensors: SensorDuo

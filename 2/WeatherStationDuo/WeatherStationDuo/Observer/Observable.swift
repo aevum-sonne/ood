@@ -19,21 +19,19 @@ class Observable<T> : IObservable<T>
   typealias ObserverType = IObserver<T>
   typealias PriorityObserverType = ObserverWithPriority<T>
   
-  // Autosorted elements by priority
-  private var observers: [PriorityObserverType] = [] {
-    didSet {
-      observers.sort { (lhs: PriorityObserverType, rhs: PriorityObserverType) -> Bool in
-        return lhs.priority < rhs.priority
-      }
+  private var observers: [PriorityObserverType] = []
+  
+  func registerObserver(priority: UInt64, observer: inout ObserverType) {
+    if let index = observers.firstIndex(where: { $0.priority > priority }) {
+      observers.insert(PriorityObserverType(priority: priority, observer: observer), at: index)
+    }
+    else {
+      observers.append(PriorityObserverType(priority: priority, observer: observer))
     }
   }
   
-  func registerObserver(priority: UInt64, observer: inout ObserverType) {
-    observers.insert(PriorityObserverType(priority: priority, observer: observer), at: 0)
-  }
-  
   func removeObserver(observer: inout ObserverType) {
-    if let index = observers.firstIndex(where: { $0.observer == observer }) {
+    if let index = observers.firstIndex(where: { $0.observer === observer }) {
       observers.remove(at: index)
     }
   }

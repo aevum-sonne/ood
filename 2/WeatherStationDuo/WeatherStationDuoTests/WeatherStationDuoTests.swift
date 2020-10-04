@@ -20,14 +20,7 @@ class DisplayDuoTests : DisplayDuo
     self.sensors = SensorDuo(internalSensor: internalSensor, externalSensor: externalSensor)
     self.sensorType = sensorType
     
-    super.init()
-  }
-  
-  required init() {
-    self.sensors = SensorDuo()
-    self.sensorType = UnsafeMutablePointer<String>.allocate(capacity: 1)
-    
-    super.init()
+    super.init(internalSensor: WeatherData(), externalSensor: WeatherData())
   }
   
   private var sensors: SensorDuo
