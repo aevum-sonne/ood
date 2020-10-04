@@ -1,5 +1,5 @@
 //
-//  WeatherInfo.swift
+//  Observer.swift
 //  WeatherStation
 //
 //  Created by User on 20.09.2020.
@@ -8,9 +8,7 @@
 
 import Foundation
 
-struct WeatherInfo
+class IObserver<T>
 {
-  var temperature: Double = 0
-  var humidity: Double = 0
-  var pressure: Double = 0
+  func update(data: inout T) {}
 }

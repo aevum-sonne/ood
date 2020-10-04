@@ -22,7 +22,7 @@ class RemoveObserverDisplay : IObserver<WeatherInfo>
     self.observable = observable
   }
   
-  required init() {
+  override init() {
     self.observable = Observable<WeatherInfo>()
   }
   
@@ -40,7 +40,7 @@ class PriorityDisplay : IObserver<WeatherInfo>
     self.priorities = priorities
   }
   
-  required init() {
+  override init() {
     super.init()
   }
   

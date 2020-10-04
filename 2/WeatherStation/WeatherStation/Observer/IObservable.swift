@@ -8,7 +8,8 @@
 
 import Foundation
 
-class IObservable<T> {
+class IObservable<T>
+{
   func registerObserver(observer: inout T) {}
   func removeObserver(observer: inout T) {}
   

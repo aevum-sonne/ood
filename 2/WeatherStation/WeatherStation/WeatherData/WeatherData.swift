@@ -10,18 +10,6 @@ import Foundation
 
 class WeatherData : Observable<WeatherInfo>
 {
-  func getTemperature() -> Double {
-    return temperature
-  }
-  
-  func getHumidity() -> Double {
-    return humidity
-  }
-  
-  func getPressure() -> Double {
-    return pressure
-  }
-  
   func measurementsChanged() {
     notifyObservers()
   }
@@ -38,7 +26,7 @@ class WeatherData : Observable<WeatherInfo>
     return WeatherInfo(temperature: temperature, humidity: humidity, pressure: pressure)
   }
   
-  private var temperature: Double = 0
-  private var humidity: Double = 0
-  private var pressure: Double = 760
+  private(set) var temperature: Double = 0
+  private(set) var humidity: Double = 0
+  private(set) var pressure: Double = 760
 }
