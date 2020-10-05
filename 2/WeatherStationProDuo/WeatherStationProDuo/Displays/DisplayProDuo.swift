@@ -10,6 +10,10 @@ import Foundation
 
 class DisplayProDuo : IObserver<WeatherInfoProDuo>
 {
+  init(internalSensor: WeatherData, externalSensor: WeatherDataPro) {
+    self.sensors = SensorDuo(internalSensor: internalSensor, externalSensor: externalSensor)
+  }
+  
   override func update(data: inout WeatherInfoProDuo, observable: IObservable<WeatherInfoProDuo>) {
     print(sensors.getSensorType(sensor: observable) + " sensor:")
     
@@ -23,10 +27,6 @@ class DisplayProDuo : IObserver<WeatherInfoProDuo>
     }
     
     print("----------------")
-  }
-  
-  init(internalSensor: WeatherData, externalSensor: WeatherDataPro) {
-    self.sensors = SensorDuo(internalSensor: internalSensor, externalSensor: externalSensor)
   }
   
   private var sensors: SensorDuo

@@ -23,7 +23,7 @@ class WindStats
     let degree = 180 / Double.pi
     let radian = 1 / degree
     
-    // Sum current sin, cos and divide on counter
+    // Sum current sin, cos
     avgCos += cos(direction * radian)
     avgSin += sin(direction * radian)
     

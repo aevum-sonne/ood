@@ -26,7 +26,7 @@ class WeatherData : Observable<WeatherInfoProDuo>
     return WeatherInfoProDuo(temperature: temperature, humidity: humidity, pressure: pressure)
   }
   
-  public internal(set) var temperature: Double = 0
-  public internal(set) var humidity: Double = 0
-  public internal(set) var pressure: Double = 760
+  private(set) var temperature: Double = 0
+  private(set) var humidity: Double = 0
+  private(set) var pressure: Double = 760
 }

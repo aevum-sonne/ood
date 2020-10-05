@@ -23,11 +23,12 @@ struct WeatherInfoProDuo
     self.temperature = temperature
     self.humidity = humidity
     self.pressure = pressure
+    self.wind = nil
   }
   
-  var temperature: Double
-  var humidity: Double
-  var pressure: Double
+  let temperature: Double
+  let humidity: Double
+  let pressure: Double
   
-  var wind: Wind?
+  let wind: Wind?
 }

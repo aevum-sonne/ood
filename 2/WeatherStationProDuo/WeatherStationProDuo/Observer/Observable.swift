@@ -21,7 +21,7 @@ class Observable<T> : IObservable<T>
   
   private var observers: [PriorityObserverType] = []
   
-  func registerObserver(priority: UInt64, observer: inout ObserverType) {
+  func registerObserver(priority: UInt64, observer: ObserverType) {
     if let index = observers.firstIndex(where: { $0.priority > priority }) {
       observers.insert(PriorityObserverType(priority: priority, observer: observer), at: index)
     }

@@ -10,15 +10,15 @@ import Foundation
 
 class SensorDuo
 {
-  func getSensorType(sensor: IObservable<WeatherInfoProDuo>) -> String {
-    return sensor === internalSensor ? "Internal" : "External"
-  }
-
   init(internalSensor: WeatherData, externalSensor: WeatherDataPro) {
     self.internalSensor = internalSensor
     self.externalSensor = externalSensor
   }
   
+  func getSensorType(sensor: IObservable<WeatherInfoProDuo>) -> String {
+    return sensor === internalSensor ? "Internal" : "External"
+  }
+
   private var internalSensor: WeatherData = WeatherData()
   private var externalSensor: WeatherDataPro = WeatherDataPro()
 }

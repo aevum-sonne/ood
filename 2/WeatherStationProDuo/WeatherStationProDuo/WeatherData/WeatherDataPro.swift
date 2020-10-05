@@ -8,8 +8,12 @@
 
 import Foundation
 
-class WeatherDataPro : WeatherData
+class WeatherDataPro : Observable<WeatherInfoProDuo>
 {
+  func measurementsChanged() {
+    notifyObservers()
+  }
+  
   func setMeasurements(temperature: Double, humidity: Double, pressure: Double, windSpeed: Double, windDirection: Double) {
     self.temperature = temperature
     self.humidity = humidity
@@ -23,5 +27,9 @@ class WeatherDataPro : WeatherData
     return WeatherInfoProDuo(temperature: temperature, humidity: humidity, pressure: pressure, wind: Wind(speed: wind.speed, direction: wind.direction))
   }
 
-  public internal(set) var wind: Wind = Wind()
+  private(set) var temperature: Double = 0
+  private(set) var humidity: Double = 0
+  private(set) var pressure: Double = 760
+  
+  private(set) var wind: Wind = Wind()
 }
