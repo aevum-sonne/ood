@@ -10,42 +10,47 @@
 
 import XCTest
 
+class SensorType
+{
+  var value: String = ""
+}
+
 class DisplayDuoTests : DisplayDuo
 {
-  override func update(data: inout WeatherInfo, observable: IObservable<WeatherInfo>) {
-    sensorType.pointee = sensors.getType(sensor: observable)
-  }
-  
-  init(internalSensor: WeatherData, externalSensor: WeatherData, sensorType: UnsafeMutablePointer<String>) {
+  init(internalSensor: WeatherData, externalSensor: WeatherData, sensorType: SensorType) {
     self.sensors = SensorDuo(internalSensor: internalSensor, externalSensor: externalSensor)
     self.sensorType = sensorType
     
     super.init(internalSensor: WeatherData(), externalSensor: WeatherData())
   }
   
+  override func update(data: inout WeatherInfo, observable: IObservable<WeatherInfo>) {
+    self.sensorType.value = sensors.getType(sensor: observable)
+  }
+  
+  private var sensorType: SensorType
   private var sensors: SensorDuo
-  private var sensorType: UnsafeMutablePointer<String>
 }
 
 class WeatherStationDuoTests: XCTestCase
 {
   func testExternalAndInternalSensorsDisplayDuo() throws {
-    let inSensor = WeatherData()
-    let outSensor = WeatherData()
+    let internalSensor = WeatherData()
+    let externalSensor = WeatherData()
     
-    var sensorType = ""
+    let sensorType = SensorType()
     
-    var displayDuo: IObserver<WeatherInfo> = DisplayDuoTests(internalSensor: inSensor, externalSensor: outSensor, sensorType: &sensorType)
+    var displayDuo: IObserver<WeatherInfo> = DisplayDuoTests(internalSensor: internalSensor, externalSensor: externalSensor, sensorType: sensorType)
     
-    inSensor.registerObserver(priority: 1, observer: &displayDuo)
-    outSensor.registerObserver(priority: 1, observer: &displayDuo)
+    internalSensor.registerObserver(priority: 1, observer: &displayDuo)
+    externalSensor.registerObserver(priority: 1, observer: &displayDuo)
     
     var expectedType = "Internal"
-    inSensor.setMeasurements(temperature: 1, humidity: 2, pressure: 3)
-    XCTAssertEqual(expectedType, sensorType)
-    
+    internalSensor.setMeasurements(temperature: 1, humidity: 2, pressure: 3)
+    XCTAssertEqual(expectedType, sensorType.value)
+
     expectedType = "External"
-    outSensor.setMeasurements(temperature: 1, humidity: 2, pressure: 3)
-    XCTAssertEqual(expectedType, sensorType)
+    externalSensor.setMeasurements(temperature: 1, humidity: 2, pressure: 3)
+    XCTAssertEqual(expectedType, sensorType.value)
   }
 }
