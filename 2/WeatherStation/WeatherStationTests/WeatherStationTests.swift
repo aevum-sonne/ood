@@ -29,13 +29,18 @@ class RemoveObserverDisplay : IObserver<WeatherInfo>
   private var observable: Observable<WeatherInfo>
 }
 
+class Priorities
+{
+  var value: String = ""
+}
+
 class PriorityDisplay : IObserver<WeatherInfo>
 {
   override func update(data: inout WeatherInfo) {
-    priorities.pointee += String(priority)
+    priorities.value += String(priority)
   }
   
-  init(priority: UInt64, priorities: UnsafeMutablePointer<String>) {
+  init(priority: UInt64, priorities: Priorities) {
     self.priority = priority
     self.priorities = priorities
   }
@@ -45,7 +50,7 @@ class PriorityDisplay : IObserver<WeatherInfo>
   }
   
   private var priority: UInt64 = 0
-  private var priorities: UnsafeMutablePointer<String> = UnsafeMutablePointer.allocate(capacity: 5)
+  private var priorities = Priorities()
 }
 
 class WeatherStationTests: XCTestCase
@@ -63,12 +68,12 @@ class WeatherStationTests: XCTestCase
     let wd = WeatherData()
     
     let expected = "1234"
-    var priorities = ""
+    let priorities = Priorities()
     
-    var obs1: IObserver<WeatherInfo> = PriorityDisplay(priority: 1, priorities: &priorities)
-    var obs2: IObserver<WeatherInfo> = PriorityDisplay(priority: 2, priorities: &priorities)
-    var obs3: IObserver<WeatherInfo> = PriorityDisplay(priority: 3, priorities: &priorities)
-    var obs4: IObserver<WeatherInfo> = PriorityDisplay(priority: 4, priorities: &priorities)
+    var obs1: IObserver<WeatherInfo> = PriorityDisplay(priority: 1, priorities: priorities)
+    var obs2: IObserver<WeatherInfo> = PriorityDisplay(priority: 2, priorities: priorities)
+    var obs3: IObserver<WeatherInfo> = PriorityDisplay(priority: 3, priorities: priorities)
+    var obs4: IObserver<WeatherInfo> = PriorityDisplay(priority: 4, priorities: priorities)
         
     wd.registerObserver(priority: 1, observer: &obs1)
     wd.registerObserver(priority: 2, observer: &obs2)
@@ -77,50 +82,50 @@ class WeatherStationTests: XCTestCase
     
     wd.setMeasurements(temperature: 1, humidity: 2, pressure: 3)
     
-    XCTAssertEqual(expected, priorities)
+    XCTAssertEqual(expected, priorities.value)
   }
   
   func testCorrectObserverPriorityWorkWithReverseOrderedInputValues() throws {
     let wd = WeatherData()
-    
-    let expected = "1234"
-    var priorities = ""
 
-    var obs1: IObserver<WeatherInfo> = PriorityDisplay(priority: 4, priorities: &priorities)
-    var obs2: IObserver<WeatherInfo> = PriorityDisplay(priority: 3, priorities: &priorities)
-    var obs3: IObserver<WeatherInfo> = PriorityDisplay(priority: 2, priorities: &priorities)
-    var obs4: IObserver<WeatherInfo> = PriorityDisplay(priority: 1, priorities: &priorities)
-    
+    let expected = "1234"
+    let priorities = Priorities()
+
+    var obs1: IObserver<WeatherInfo> = PriorityDisplay(priority: 4, priorities: priorities)
+    var obs2: IObserver<WeatherInfo> = PriorityDisplay(priority: 3, priorities: priorities)
+    var obs3: IObserver<WeatherInfo> = PriorityDisplay(priority: 2, priorities: priorities)
+    var obs4: IObserver<WeatherInfo> = PriorityDisplay(priority: 1, priorities: priorities)
+
     wd.registerObserver(priority: 4, observer: &obs1)
     wd.registerObserver(priority: 3, observer: &obs2)
     wd.registerObserver(priority: 2, observer: &obs3)
     wd.registerObserver(priority: 1, observer: &obs4)
-    
+
     wd.setMeasurements(temperature: 1, humidity: 2, pressure: 3)
-    
-    XCTAssertEqual(expected, priorities)
+
+    XCTAssertEqual(expected, priorities.value)
   }
-  
+
   func testCorrectObserverPriorityWorkWithUnorderedInputValues() throws {
     let wd = WeatherData()
-    
+
     let expected = "12234"
-    var priorities = ""
-    
-    var obs1: IObserver<WeatherInfo> = PriorityDisplay(priority: 3, priorities: &priorities)
-    var obs2: IObserver<WeatherInfo> = PriorityDisplay(priority: 2, priorities: &priorities)
-    var obs3: IObserver<WeatherInfo> = PriorityDisplay(priority: 1, priorities: &priorities)
-    var obs4: IObserver<WeatherInfo> = PriorityDisplay(priority: 4, priorities: &priorities)
-    var obs5: IObserver<WeatherInfo> = PriorityDisplay(priority: 2, priorities: &priorities)
+    let priorities = Priorities()
+
+    var obs1: IObserver<WeatherInfo> = PriorityDisplay(priority: 3, priorities: priorities)
+    var obs2: IObserver<WeatherInfo> = PriorityDisplay(priority: 2, priorities: priorities)
+    var obs3: IObserver<WeatherInfo> = PriorityDisplay(priority: 1, priorities: priorities)
+    var obs4: IObserver<WeatherInfo> = PriorityDisplay(priority: 4, priorities: priorities)
+    var obs5: IObserver<WeatherInfo> = PriorityDisplay(priority: 2, priorities: priorities)
 
     wd.registerObserver(priority: 3, observer: &obs1)
     wd.registerObserver(priority: 2, observer: &obs2)
     wd.registerObserver(priority: 1, observer: &obs3)
     wd.registerObserver(priority: 4, observer: &obs4)
     wd.registerObserver(priority: 2, observer: &obs5)
-    
+
     wd.setMeasurements(temperature: 1, humidity: 2, pressure: 3)
-    
-    XCTAssertEqual(expected, priorities)
+
+    XCTAssertEqual(expected, priorities.value)
   }
 }
