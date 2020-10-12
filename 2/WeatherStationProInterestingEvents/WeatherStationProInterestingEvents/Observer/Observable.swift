@@ -26,13 +26,13 @@ class Observable<T, Event> : IObservable<T> where Event: Hashable
   
   private var eventsWithObservers: Dictionary<Event, [PriorityObserverType]> = [:]
   
-  func registerObserver(priority: UInt64, observer: inout ObserverType, events: [Event]) {
+  func registerObserver(priority: UInt64, observer: ObserverType, events: [Event]) {
     events.forEach { event in
-      subscribeObserver(priority: priority, observer: &observer, event: event)
+      subscribeObserver(priority: priority, observer: observer, event: event)
     }
   }
   
-  func subscribeObserver(priority: UInt64, observer: inout ObserverType, event: Event) {
+  func subscribeObserver(priority: UInt64, observer: ObserverType, event: Event) {
     let observerWithPriority = ObserverWithPriority(priority: priority, observer: observer)
 
     if let index = eventsWithObservers[event]?.firstIndex(where: { observerWithPriority <= $0 }) {
@@ -48,13 +48,13 @@ class Observable<T, Event> : IObservable<T> where Event: Hashable
     }
   }
   
-  func unsubscribeObserver(observer: inout ObserverType, event: Event) {
+  func unsubscribeObserver(observer: ObserverType, event: Event) {
     if let index = getObserverPosition(observer: observer, observers: eventsWithObservers[event]!) {
       eventsWithObservers[event]!.remove(at: index)
     }
   }
   
-  func removeObserver(observer: inout ObserverType) {
+  func removeObserver(observer: ObserverType) {
     for (event, observers) in eventsWithObservers {
       if let index = getObserverPosition(observer: observer, observers: observers) {
         eventsWithObservers[event]!.remove(at: index)
@@ -66,12 +66,12 @@ class Observable<T, Event> : IObservable<T> where Event: Hashable
     return observers.firstIndex(where: { $0.observer === observer })
   }
   
-  override func notifyObservers() {
+  func notifyObservers(eventsToUpdate: [Event]) {
     var data = getChangedData()
     
     // Call update on all stored events
-    for (event, eventObservers) in eventsWithObservers {
-      eventObservers.forEach {observerWithPriority in
+    for (event, eventObservers) in eventsWithObservers where eventsToUpdate.contains(event) {
+      eventObservers.forEach { observerWithPriority in
         observerWithPriority.observer.update(data: &data, event: event)
       }
     }

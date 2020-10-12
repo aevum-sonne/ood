@@ -10,8 +10,8 @@ import Foundation
 
 struct WeatherInfoPro
 {
-  var temperature: Double = 0
-  var humidity: Double = 0
-  var pressure: Double = 0
-  var wind: Wind = Wind()
+  let temperature: Double
+  let humidity: Double
+  let pressure: Double
+  let wind: Wind
 }
