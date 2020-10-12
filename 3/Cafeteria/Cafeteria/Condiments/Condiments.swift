@@ -8,41 +8,38 @@
 
 import Foundation
 
-class CondimentDecorator : IBeverage {
-  init(beverage: IBeverage) {
-    super.init()
-    
+class CondimentDecorator : BeverageProtocol {
+  var description: String = ""
+  var cost: Double = 0
+  
+  init(beverage: BeverageProtocol) {
     self.beverage = beverage
-  }
-  
-  override func getDescription() -> String {
-    return beverage!.getDescription() + ", " + getCondimentDescription()
-  }
-  
-  override func getCost() -> Double {
-    return beverage!.getCost() + getCondimentCost()
+    self.description = beverage.description + ", " + getCondimentDescription()
+    self.cost = beverage.cost + getCondimentCost()
   }
   
   func getCondimentDescription() -> String { return "" }
   func getCondimentCost() -> Double { return 0 }
+  
+  private var beverage: BeverageProtocol
 }
 
 class Cinnamon : CondimentDecorator {
-  override init(beverage: IBeverage) {
+  override init(beverage: BeverageProtocol) {
     super.init(beverage: beverage)
   }
   
   override func getCondimentCost() -> Double {
     return 20
   }
-  
+
   override func getCondimentDescription() -> String {
     return "Cinnamon"
   }
 }
 
 class Lemon : CondimentDecorator {
-  init(beverage: IBeverage, quantity: UInt) {
+  init(beverage: BeverageProtocol, quantity: UInt) {
     self.quantity = quantity
     
     super.init(beverage: beverage)
@@ -65,7 +62,7 @@ enum IceCubeType : String {
 }
 
 class IceCubes : CondimentDecorator {
-  init(beverage: IBeverage, quantity: UInt, type: IceCubeType = IceCubeType.water) {
+  init(beverage: BeverageProtocol, quantity: UInt, type: IceCubeType = IceCubeType.water) {
     self.quantity = quantity
     self.type = type
     
@@ -81,7 +78,6 @@ class IceCubes : CondimentDecorator {
   }
   
   private var quantity: UInt
-  
   private var type: IceCubeType
 }
 
@@ -91,7 +87,7 @@ enum SyrupType: String {
 }
 
 class Syrup : CondimentDecorator {
-  init(beverage: IBeverage, type: SyrupType) {
+  init(beverage: BeverageProtocol, type: SyrupType) {
     self.type = type
     
     super.init(beverage: beverage)
@@ -109,7 +105,7 @@ class Syrup : CondimentDecorator {
 }
 
 class ChocolateCrumbs : CondimentDecorator {
-  init(beverage: IBeverage, mass: UInt) {
+  init(beverage: BeverageProtocol, mass: UInt) {
     self.mass = mass
     
     super.init(beverage: beverage)
@@ -127,7 +123,7 @@ class ChocolateCrumbs : CondimentDecorator {
 }
 
 class CocountFlakes : CondimentDecorator {
-  init(beverage: IBeverage, mass: UInt) {
+  init(beverage: BeverageProtocol, mass: UInt) {
     self.mass = mass
     
     super.init(beverage: beverage)
@@ -145,7 +141,7 @@ class CocountFlakes : CondimentDecorator {
 }
 
 class Cream : CondimentDecorator {
-  override init(beverage: IBeverage) {
+  override init(beverage: BeverageProtocol) {
     super.init(beverage: beverage)
   }
   
@@ -159,7 +155,7 @@ class Cream : CondimentDecorator {
 }
 
 class Chocolate : CondimentDecorator {
-  init(beverage: IBeverage, quantity: UInt) {
+  init(beverage: BeverageProtocol, quantity: UInt) {
     self.quantity = quantity <= 5 ? quantity : 5
     
     super.init(beverage: beverage)
@@ -182,7 +178,7 @@ enum LiquorType: String {
 }
 
 class Liquor : CondimentDecorator {
-  init(beverage: IBeverage, type: LiquorType) {
+  init(beverage: BeverageProtocol, type: LiquorType) {
     self.type = type
     
     super.init(beverage: beverage)
@@ -193,7 +189,7 @@ class Liquor : CondimentDecorator {
   }
   
   override func getCondimentDescription() -> String {
-    return "\(type.rawValue) Cream"
+    return "\(type.rawValue) Liquor"
   }
   
   private let type: LiquorType

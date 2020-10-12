@@ -18,6 +18,5 @@ let cream = Cream(beverage: cocountFlakes)
 let chocolate = Chocolate(beverage: cream, quantity: 99999)
 let liquor = Liquor(beverage: chocolate, type: .nut)
 
-
-print(liquor.getDescription())
-print(liquor.getCost())
+print(liquor.description)
+print(liquor.cost)

@@ -8,18 +8,13 @@
 
 import Foundation
 
-class Beverage : IBeverage {
+class Beverage : BeverageProtocol {
+  var description: String
+  var cost: Double = 0
+  
   init(description: String) {
     self.description = description
-    
-    super.init()
   }
-  
-  override func getDescription() -> String {
-    return description
-  }
-    
-  private var description: String
 }
 
 enum CoffeePortion: String {
@@ -32,32 +27,23 @@ class Coffee : Beverage {
     self.portion = portion
     
     super.init(description: description)
+    self.cost = 60
   }
   
-  override func getCost() -> Double {
-    return 60
-  }
-  
-  let portion: CoffeePortion
+  private let portion: CoffeePortion
 }
 
 class Cappuccino : Coffee {
   init(portion: CoffeePortion) {
     super.init(description: "\(portion.rawValue) Cappuccino", portion: portion)
-  }
-  
-  override func getCost() -> Double {
-    return portion == .standard ? 80 : 120
+    self.cost = portion == .standard ? 80 : 120
   }
 }
 
 class Latte : Coffee {
   init(portion: CoffeePortion) {
     super.init(description: "\(portion.rawValue) Latte", portion: portion)
-  }
-  
-  override func getCost() -> Double {
-    return portion == .standard ? 90 : 130
+    self.cost = portion == .standard ? 90 : 130
   }
 }
 
@@ -73,10 +59,7 @@ class Tea : Beverage {
     self.type = type
     
     super.init(description: "\(type.rawValue) Tea")
-  }
-  
-  override func getCost() -> Double {
-    return 30
+    self.cost = 30
   }
   
   private let type: TeaType
@@ -93,10 +76,7 @@ class MilkShake : Beverage {
     self.portion = portion
     
     super.init(description: "\(portion.rawValue) MilkShake")
-  }
-  
-  override func getCost() -> Double {
-    return portion == .small ? 50
+    self.cost = portion == .small ? 50
       : portion == .medium ? 60
       : 80
   }

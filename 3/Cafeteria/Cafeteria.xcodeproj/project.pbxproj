@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CEB8A8F2252CE9BD007AC37C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8A8F1252CE9BD007AC37C /* main.swift */; };
 		CEB8A8F9252CE9E9007AC37C /* Beverages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8A8F8252CE9E9007AC37C /* Beverages.swift */; };
-		CEB8A8FB252CEA03007AC37C /* IBeverages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8A8FA252CEA03007AC37C /* IBeverages.swift */; };
+		CEB8A8FB252CEA03007AC37C /* BeverageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8A8FA252CEA03007AC37C /* BeverageProtocol.swift */; };
 		CEB8A8FF252CF172007AC37C /* Condiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8A8FE252CF172007AC37C /* Condiments.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +29,7 @@
 		CEB8A8EE252CE9BD007AC37C /* Cafeteria */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Cafeteria; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB8A8F1252CE9BD007AC37C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		CEB8A8F8252CE9E9007AC37C /* Beverages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beverages.swift; sourceTree = "<group>"; };
-		CEB8A8FA252CEA03007AC37C /* IBeverages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeverages.swift; sourceTree = "<group>"; };
+		CEB8A8FA252CEA03007AC37C /* BeverageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageProtocol.swift; sourceTree = "<group>"; };
 		CEB8A8FE252CF172007AC37C /* Condiments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condiments.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB8A8F8252CE9E9007AC37C /* Beverages.swift */,
-				CEB8A8FA252CEA03007AC37C /* IBeverages.swift */,
+				CEB8A8FA252CEA03007AC37C /* BeverageProtocol.swift */,
 			);
 			path = Beverages;
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEB8A8FB252CEA03007AC37C /* IBeverages.swift in Sources */,
+				CEB8A8FB252CEA03007AC37C /* BeverageProtocol.swift in Sources */,
 				CEB8A8F9252CE9E9007AC37C /* Beverages.swift in Sources */,
 				CEB8A8F2252CE9BD007AC37C /* main.swift in Sources */,
 				CEB8A8FF252CF172007AC37C /* Condiments.swift in Sources */,
