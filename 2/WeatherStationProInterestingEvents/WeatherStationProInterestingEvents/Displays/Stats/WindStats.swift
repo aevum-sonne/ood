@@ -10,13 +10,22 @@ import Foundation
 
 class WindStats
 {
-  func updateStats(data wind: Wind) {
+  func updateDirection(direction: Double) {
     countAcc += 1
         
-    findAverageDirection(direction: wind.direction)
-    findAverageSpeed(speed: wind.speed)
+    findAverageDirection(direction: direction)
     
-    printStats()
+    print("Average Wind Direction \(avgDirection)")
+    print("----------------")
+  }
+  
+  func updateSpeed(speed: Double) {
+    countAcc += 1
+
+    findAverageSpeed(speed: speed)
+    
+    print("Average Wind Speed \(avgSpeed)")
+    print("----------------")
   }
   
   private func findAverageDirection(direction: Double) {
@@ -32,12 +41,6 @@ class WindStats
   
   private func findAverageSpeed(speed: Double) {
     avgSpeed = (avgSpeed + speed) / Double(countAcc)
-  }
-  
-  private func printStats() {
-    print("Average Wind Speed \(avgSpeed)")
-    print("Average Wind Direction \(avgDirection)")
-    print("----------------")
   }
   
   private var avgCos: Double = 0

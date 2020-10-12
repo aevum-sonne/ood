@@ -18,8 +18,10 @@ class StatsDisplayPro : IObserver<WeatherInfoPro, WeatherEvent>
         humidityStats.updateStats(data: data.humidity)
       case .pressure:
         pressureStats.updateStats(data: data.pressure)
-      case .speed, .direction:
-        windStats.updateStats(data: data.wind)
+      case .speed:
+        windStats.updateSpeed(speed: data.wind.speed)
+      case .direction:
+        windStats.updateDirection(direction: data.wind.direction)
     }
   }
 

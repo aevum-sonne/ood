@@ -10,6 +10,10 @@ import Foundation
 
 class Stats
 {
+  required init(type: String) {
+    self.type = type
+  }
+  
   func updateStats(data: Double) {
     if (minData > data) {
       minData = data
@@ -36,10 +40,6 @@ class Stats
     print("Min \(type) \(minData)")
     print("Average \(type) \(avgData)")
     print("----------------")
-  }
-  
-  required init(type: String) {
-    self.type = type
   }
   
   private var type: String
