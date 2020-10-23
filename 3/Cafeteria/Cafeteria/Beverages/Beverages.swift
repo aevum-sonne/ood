@@ -9,11 +9,12 @@
 import Foundation
 
 class Beverage : BeverageProtocol {
-  var description: String
-  var cost: Double = 0
+  let description: String
+  let cost: Double
   
-  init(description: String) {
+  init(description: String, cost: Double) {
     self.description = description
+    self.cost = cost
   }
 }
 
@@ -23,27 +24,23 @@ enum CoffeePortion: String {
 }
 
 class Coffee : Beverage {
-  init(description: String = "Coffee", portion: CoffeePortion = .standard) {
-    self.portion = portion
+  init(description: String = "Coffee", cost: Double, portion: CoffeePortion = .standard) {
     
-    super.init(description: description)
-    self.cost = 60
+    super.init(description: description, cost: 0)
   }
-  
-  private let portion: CoffeePortion
 }
 
 class Cappuccino : Coffee {
   init(portion: CoffeePortion) {
-    super.init(description: "\(portion.rawValue) Cappuccino", portion: portion)
-    self.cost = portion == .standard ? 80 : 120
+    let cost: Double = portion == .standard ? 80 : 120
+    super.init(description: "\(portion.rawValue) Cappuccino", cost: cost, portion: portion)
   }
 }
 
 class Latte : Coffee {
   init(portion: CoffeePortion) {
-    super.init(description: "\(portion.rawValue) Latte", portion: portion)
-    self.cost = portion == .standard ? 90 : 130
+    let cost: Double = portion == .standard ? 90 : 130
+    super.init(description: "\(portion.rawValue) Latte", cost: cost, portion: portion)
   }
 }
 
@@ -56,13 +53,8 @@ enum TeaType: String {
 
 class Tea : Beverage {
   init(type: TeaType) {
-    self.type = type
-    
-    super.init(description: "\(type.rawValue) Tea")
-    self.cost = 30
+    super.init(description: "\(type.rawValue) Tea", cost: 30)
   }
-  
-  private let type: TeaType
 }
 
 enum MilkShakePortion: String {
@@ -73,13 +65,10 @@ enum MilkShakePortion: String {
 
 class MilkShake : Beverage {
   init(portion: MilkShakePortion) {
-    self.portion = portion
-    
-    super.init(description: "\(portion.rawValue) MilkShake")
-    self.cost = portion == .small ? 50
+    let cost: Double = portion == .small ? 50
       : portion == .medium ? 60
       : 80
+    
+    super.init(description: "\(portion.rawValue) MilkShake", cost: cost)
   }
-  
-  private let portion: MilkShakePortion
 }

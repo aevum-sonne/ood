@@ -9,6 +9,6 @@
 import Foundation
 
 protocol BeverageProtocol {
-  var description: String { get set }
-  var cost: Double { get set }
+  var description: String { get }
+  var cost: Double { get }
 }

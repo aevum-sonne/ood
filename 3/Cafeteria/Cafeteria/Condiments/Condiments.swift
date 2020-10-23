@@ -9,51 +9,46 @@
 import Foundation
 
 class CondimentDecorator : BeverageProtocol {
-  var description: String = ""
-  var cost: Double = 0
+  let description: String
+  let cost: Double
   
-  init(beverage: BeverageProtocol) {
+  let condimentDescription: String
+  let condimentCost: Double
+  
+  init(beverage: BeverageProtocol, condimentDescription: String, condimentCost: Double) {
     self.beverage = beverage
-    self.description = beverage.description + ", " + getCondimentDescription()
-    self.cost = beverage.cost + getCondimentCost()
+    
+    self.description = beverage.description + ", " + condimentDescription
+    self.cost = beverage.cost + condimentCost
+    
+    self.condimentDescription = condimentDescription
+    self.condimentCost = condimentCost
   }
   
-  func getCondimentDescription() -> String { return "" }
-  func getCondimentCost() -> Double { return 0 }
-  
-  private var beverage: BeverageProtocol
+  private let beverage: BeverageProtocol
+}
+
+protocol CondimentProtocol {
+  var condimentDescription: String { get }
+  var condimentCost: Double { get }
 }
 
 class Cinnamon : CondimentDecorator {
-  override init(beverage: BeverageProtocol) {
-    super.init(beverage: beverage)
-  }
-  
-  override func getCondimentCost() -> Double {
-    return 20
-  }
-
-  override func getCondimentDescription() -> String {
-    return "Cinnamon"
+  init(beverage: BeverageProtocol) {
+    let condimentDescription = "Cinnamon"
+    let condimentCost: Double = 20
+    
+    super.init(beverage: beverage, condimentDescription: condimentDescription, condimentCost: condimentCost)
   }
 }
 
 class Lemon : CondimentDecorator {
   init(beverage: BeverageProtocol, quantity: UInt) {
-    self.quantity = quantity
+    let condimentDescription = "Lemon x\(quantity)"
+    let condimentCost = Double(10 * quantity)
     
-    super.init(beverage: beverage)
+    super.init(beverage: beverage, condimentDescription: condimentDescription, condimentCost: condimentCost)
   }
-  
-  override func getCondimentCost() -> Double {
-    return Double(10 * quantity)
-  }
-  
-  override func getCondimentDescription() -> String {
-    return "Lemon x\(quantity)"
-  }
-  
-  private var quantity: UInt
 }
 
 enum IceCubeType : String {
@@ -63,22 +58,11 @@ enum IceCubeType : String {
 
 class IceCubes : CondimentDecorator {
   init(beverage: BeverageProtocol, quantity: UInt, type: IceCubeType = IceCubeType.water) {
-    self.quantity = quantity
-    self.type = type
-    
-    super.init(beverage: beverage)
+    let condimentDescription = type.rawValue
+    let condimentCost = (type == IceCubeType.dry ? 10 : 5) * Double(quantity)
+      
+    super.init(beverage: beverage, condimentDescription: condimentDescription, condimentCost: condimentCost)
   }
-  
-  override func getCondimentCost() -> Double {
-    return (type == IceCubeType.dry ? 10 : 5) * Double(quantity)
-  }
-  
-  override func getCondimentDescription() -> String {
-    return type.rawValue
-  }
-  
-  private var quantity: UInt
-  private var type: IceCubeType
 }
 
 enum SyrupType: String {
@@ -88,88 +72,48 @@ enum SyrupType: String {
 
 class Syrup : CondimentDecorator {
   init(beverage: BeverageProtocol, type: SyrupType) {
-    self.type = type
-    
-    super.init(beverage: beverage)
+    let condimentDescription = type.rawValue + " syrup"
+    let condimentCost: Double = 15
+      
+    super.init(beverage: beverage, condimentDescription: condimentDescription, condimentCost: condimentCost)
   }
-  
-  override func getCondimentCost() -> Double {
-    return 15
-  }
-  
-  override func getCondimentDescription() -> String {
-    return type.rawValue + " syrup"
-  }
-  
-  private var type: SyrupType
 }
 
 class ChocolateCrumbs : CondimentDecorator {
   init(beverage: BeverageProtocol, mass: UInt) {
-    self.mass = mass
-    
-    super.init(beverage: beverage)
+    let condimentDescription = "Chocolate crumbs \(mass)g"
+    let condimentCost = 2 * Double(mass)
+      
+    super.init(beverage: beverage, condimentDescription: condimentDescription, condimentCost: condimentCost)
   }
-  
-  override func getCondimentCost() -> Double {
-    return 2 * Double(mass)
-  }
-  
-  override func getCondimentDescription() -> String {
-    return "Chocolate crumbs \(mass)g"
-  }
-  
-  private var mass: UInt
 }
 
 class CocountFlakes : CondimentDecorator {
   init(beverage: BeverageProtocol, mass: UInt) {
-    self.mass = mass
-    
-    super.init(beverage: beverage)
+    let condimentDescription = "Cocount flakes \(mass)g"
+    let condimentCost = Double(mass)
+      
+    super.init(beverage: beverage, condimentDescription: condimentDescription, condimentCost: condimentCost)
   }
-  
-  override func getCondimentCost() -> Double {
-    return Double(mass)
-  }
-  
-  override func getCondimentDescription() -> String {
-    return "Cocount flakes \(mass)g"
-  }
-  
-  private var mass: UInt
 }
 
 class Cream : CondimentDecorator {
-  override init(beverage: BeverageProtocol) {
-    super.init(beverage: beverage)
-  }
-  
-  override func getCondimentCost() -> Double {
-    return 25
-  }
-  
-  override func getCondimentDescription() -> String {
-    return "Cream"
+  init(beverage: BeverageProtocol) {
+    let condimentDescription = "Cream"
+    let condimentCost: Double = 25
+      
+    super.init(beverage: beverage, condimentDescription: condimentDescription, condimentCost: condimentCost)
   }
 }
 
 class Chocolate : CondimentDecorator {
   init(beverage: BeverageProtocol, quantity: UInt) {
-    self.quantity = quantity <= 5 ? quantity : 5
+    let quantity = quantity <= 5 ? quantity : 5
+    let condimentDescription = "Chocolate x\(quantity)"
+    let condimentCost = 10 * Double(quantity)
     
-    super.init(beverage: beverage)
+    super.init(beverage: beverage, condimentDescription: condimentDescription, condimentCost: condimentCost)
   }
-  
-  override func getCondimentCost() -> Double {
-    return 10 * Double(quantity)
-  }
-  
-  override func getCondimentDescription() -> String {
-    return "Chocolate x\(quantity)"
-  }
-  
-  private let quantity: UInt
 }
 
 enum LiquorType: String {
@@ -179,18 +123,9 @@ enum LiquorType: String {
 
 class Liquor : CondimentDecorator {
   init(beverage: BeverageProtocol, type: LiquorType) {
-    self.type = type
+    let condimentDescription = "\(type.rawValue) Liquor"
+    let condimentCost: Double = 50
     
-    super.init(beverage: beverage)
+    super.init(beverage: beverage, condimentDescription: condimentDescription, condimentCost: condimentCost)
   }
-  
-  override func getCondimentCost() -> Double {
-    return 50
-  }
-  
-  override func getCondimentDescription() -> String {
-    return "\(type.rawValue) Liquor"
-  }
-  
-  private let type: LiquorType
 }
