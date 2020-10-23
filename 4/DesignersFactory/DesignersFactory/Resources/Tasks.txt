@@ -1,5 +1,6 @@
-rectangle pink 30 30 400 400
-rectangle green 215 160 460 160
+rectangle pink 530 530 400 400
+rectangle green 315 260 460 160
 triangle pink 430 330 360 466 660 330
 polygon yellow 500 500 300 8
 ellipse red 400 400 500 300
+

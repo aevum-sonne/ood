@@ -59,8 +59,6 @@ class ShapeFactory: ShapeFactoryProtocol {
     return shape
   }
   
-  private let frame = CGRect(x: 0, y: 0, width: 1000, height: 1000)
-
   private func createRectangle(description: [String]) throws -> ShapeProtocol {
     if description.count != 5 {
       throw FactoryError.invalidRectangle(.invalidArgumentsCount)
@@ -76,10 +74,10 @@ class ShapeFactory: ShapeFactoryProtocol {
     
     guard let width = Double(description[3]),
       let height = Double(description[4]) else {
-        throw FactoryError.invalidRectangle(.invalidRange)
+        throw FactoryError.invalidRectangle(.invalidDistance)
       }
     
-    return Rectangle(frame: frame, color: color, leftTop: leftTop, width: CGFloat(width), height: CGFloat(height))
+    return Rectangle(color: color, leftTop: leftTop, width: CGFloat(width), height: CGFloat(height))
   }
 
   private func createTriangle(description: [String]) throws -> ShapeProtocol {
@@ -98,7 +96,7 @@ class ShapeFactory: ShapeFactoryProtocol {
         throw FactoryError.invalidTriangle(.invalidPoint)
     }
 
-    return Triangle(frame: frame, color: color, vertex1: vertex1, vertex2: vertex2, vertex3: vertex3)
+    return Triangle(color: color, vertex1: vertex1, vertex2: vertex2, vertex3: vertex3)
   }
   
   private func createPolygon(description: [String]) throws -> ShapeProtocol {
@@ -116,14 +114,14 @@ class ShapeFactory: ShapeFactoryProtocol {
     }
     
     guard let radius = Double(description[3]) else {
-      throw FactoryError.invalidRegularPolygon(.invalidRange)
+      throw FactoryError.invalidRegularPolygon(.invalidDistance)
     }
     
     guard let vertexCount = UInt(description[4]), vertexCount > 0 else {
-      throw FactoryError.invalidRegularPolygon(.invalidRange)
+      throw FactoryError.invalidRegularPolygon(.invalidDistance)
     }
     
-    return RegularPolygon(frame: frame, color: color, center: center, radius: radius, vertexCount: vertexCount)
+    return RegularPolygon(color: color, center: center, radius: radius, vertexCount: vertexCount)
   }
   
   private func createEllipse(description: [String]) throws -> ShapeProtocol {
@@ -143,10 +141,10 @@ class ShapeFactory: ShapeFactoryProtocol {
     guard let horizontalRadius = Double(description[3]),
       let verticalRadius = Double(description[4])
       else {
-        throw FactoryError.invalidEllipse(.invalidRange)
+        throw FactoryError.invalidEllipse(.invalidDistance)
     }
 
-    return Ellipse(frame: frame, color: color, center: center, horizontalRadius: CGFloat(horizontalRadius), verticalRadius: CGFloat(verticalRadius))
+    return Ellipse(color: color, center: center, horizontalRadius: CGFloat(horizontalRadius), verticalRadius: CGFloat(verticalRadius))
    }
 
   private func createColor(color: String) -> NSColor? {

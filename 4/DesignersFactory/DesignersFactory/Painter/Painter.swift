@@ -9,9 +9,9 @@
 import Cocoa
 
 class Painter {
-  func drawPicture(view: NSView, draft: PictureDraft) {
+  func drawPicture(canvas: CanvasProtocol, draft: PictureDraft) {
     for shape in draft.shapes {
-      view.addSubview(shape)
+      shape.draw(canvas: canvas)
     }
   }
 }

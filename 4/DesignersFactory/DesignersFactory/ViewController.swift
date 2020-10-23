@@ -18,9 +18,19 @@ class ViewController: NSViewController {
     let designer = Designer(factory: factory)
     let tasks = getDesignersTasks(filename: "Tasks")
     let draft = designer.createDraft(tasks: tasks)
+    let canvas = Canvas(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
     let painter = Painter()
+
+    painter.drawPicture(canvas: canvas, draft: draft)
+    view.addSubview(canvas)
+  }
+  
+  private func getDesignersTasks(filename: String) -> [String] {
+    let path = Bundle.main.path(forResource: filename, ofType: "txt")
+    let contents = try! String(contentsOfFile: path!)
+    let tasks = contents.split(separator:"\n").map { String($0) }
     
-    painter.drawPicture(view: view, draft: draft)
+    return tasks
   }
   
   
