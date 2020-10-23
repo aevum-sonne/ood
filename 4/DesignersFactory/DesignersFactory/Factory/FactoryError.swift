@@ -8,20 +8,20 @@
 
 import Foundation
 
-enum PrefixMessage: String {
+enum InvalidArgumentDescription: String {
   case invalidArgumentsCount = "Invalid arguments count."
   case invalidColor = "Invalid color."
   case invalidPoint = "Invalid point."
-  case invalidRange = "Invalid range."
+  case invalidDistance = "Invalid distance argument."
   case invalidShapeName = "Invalid shape name."
 }
 
 enum FactoryError: Error {
-  case invalidShape(PrefixMessage)
-  case invalidRectangle(PrefixMessage)
-  case invalidTriangle(PrefixMessage)
-  case invalidRegularPolygon(PrefixMessage)
-  case invalidEllipse(PrefixMessage)
+  case invalidShape(InvalidArgumentDescription)
+  case invalidRectangle(InvalidArgumentDescription)
+  case invalidTriangle(InvalidArgumentDescription)
+  case invalidRegularPolygon(InvalidArgumentDescription)
+  case invalidEllipse(InvalidArgumentDescription)
 }
 
 func handle(factoryError error: FactoryError) {
@@ -41,6 +41,6 @@ func handle(factoryError error: FactoryError) {
       print("\(prefix) \(message.rawValue) Usage: polygon <color> <center> <radius> <vertex-count>")
     
     case .invalidEllipse(let message):
-      print("\(prefix) \(message.rawValue) Usage: rectangle <color> <center> <horizontal-radius> <vertical-radius>")
+      print("\(prefix) \(message.rawValue) Usage: ellipse <color> <center> <horizontal-radius> <vertical-radius>")
   }
 }
