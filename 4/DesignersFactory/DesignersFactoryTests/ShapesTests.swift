@@ -11,15 +11,13 @@
 import XCTest
 
 class ShapesTests: XCTestCase {
-  let frame = CGRect(x: 0, y: 0, width: 1000, height: 1000)
-  
   func testRectangle() {
     let color: NSColor = .black
     let leftTop = CGPoint(x: 66, y: 66)
     let width: CGFloat = 133
     let height: CGFloat = 133
     
-    let rectangle = Rectangle(frame: frame, color: color, leftTop: leftTop, width: width, height: height)
+    let rectangle = Rectangle(color: color, leftTop: leftTop, width: width, height: height)
     
     XCTAssertEqual(color, rectangle.color)
     XCTAssertEqual(leftTop, rectangle.leftTop)
@@ -33,7 +31,7 @@ class ShapesTests: XCTestCase {
     let vertex2 = CGPoint(x: 6, y: 6)
     let vertex3 = CGPoint(x: 12, y: 1)
     
-    let triangle = Triangle(frame: frame, color: color, vertex1: vertex1, vertex2: vertex2, vertex3: vertex3)
+    let triangle = Triangle(color: color, vertex1: vertex1, vertex2: vertex2, vertex3: vertex3)
     
     XCTAssertEqual(color, triangle.color)
     XCTAssertEqual(vertex1, triangle.vertex1)
@@ -47,7 +45,7 @@ class ShapesTests: XCTestCase {
     let radius: Double = 20
     let vertexCount: UInt = 12
     
-    let polygon = RegularPolygon(frame: frame, color: color, center: center, radius: radius, vertexCount: vertexCount)
+    let polygon = RegularPolygon(color: color, center: center, radius: radius, vertexCount: vertexCount)
     
     XCTAssertEqual(color, polygon.color)
     XCTAssertEqual(center, polygon.center)
@@ -61,7 +59,7 @@ class ShapesTests: XCTestCase {
     let horizontalRadius: CGFloat = 40
     let verticalRadius: CGFloat = 60
 
-    let ellipse = Ellipse(frame: frame, color: color, center: center, horizontalRadius: horizontalRadius, verticalRadius: verticalRadius)
+    let ellipse = Ellipse(color: color, center: center, horizontalRadius: horizontalRadius, verticalRadius: verticalRadius)
     
     XCTAssertEqual(color, ellipse.color)
     XCTAssertEqual(center, ellipse.center)
