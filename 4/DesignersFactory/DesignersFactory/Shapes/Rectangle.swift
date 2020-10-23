@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class Rectangle : NSView, ShapeProtocol {
+class Rectangle: Equatable, ShapeProtocol {
   let color: NSColor
   
   let leftTop: CGPoint
@@ -16,27 +16,32 @@ class Rectangle : NSView, ShapeProtocol {
   let width: CGFloat
   let height: CGFloat
   
-  init(frame: CGRect, color: NSColor, leftTop: CGPoint, width: CGFloat, height: CGFloat) {
+  static func ==(lhs: Rectangle, rhs: Rectangle) -> Bool {
+    return lhs.color == rhs.color
+      && lhs.leftTop == rhs.leftTop
+      && lhs.height == rhs.height
+      && lhs.width == rhs.width
+  }
+  
+  init(color: NSColor, leftTop: CGPoint, width: CGFloat, height: CGFloat) {
     self.color = color
     
     self.leftTop = leftTop
     
     self.width = width
     self.height = height
-    
-    super.init(frame: frame)
-  }
-
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("NSCoding not supported")
   }
     
-  override func draw(_ dirtyRect: NSRect) {
-    let rect = NSRect(x: leftTop.x, y: leftTop.y, width: width, height: height)
-    let figure = NSBezierPath(rect: rect)
+  func draw(canvas: CanvasProtocol) {
+    canvas.setColor(color: color)
     
-    color.set()
-    figure.lineWidth = 2
-    figure.stroke()
+    let rightTop = CGPoint(x: leftTop.x + width, y: leftTop.y)
+    let leftBottom = CGPoint(x: leftTop.x, y: leftTop.y - height)
+    let rightBottom = CGPoint(x: rightTop.x, y: rightTop.y - height)
+    
+    canvas.drawLine(from: leftTop, to: rightTop)
+    canvas.drawLine(from: rightTop, to: rightBottom)
+    canvas.drawLine(from: rightBottom, to: leftBottom)
+    canvas.drawLine(from: leftBottom, to: leftTop)
   }
 }

@@ -8,34 +8,33 @@
 
 import Cocoa
 
-class Ellipse : NSView, ShapeProtocol {
+class Ellipse: Equatable, ShapeProtocol {
   let color: NSColor
 
   let center: CGPoint
 
   let horizontalRadius: CGFloat
   let verticalRadius: CGFloat
+  
+  static func ==(lhs: Ellipse, rhs: Ellipse) -> Bool {
+    return lhs.color == rhs.color
+      && lhs.center == rhs.center
+      && lhs.horizontalRadius == rhs.horizontalRadius
+      && lhs.verticalRadius == rhs.verticalRadius
+  }
 
-  init(frame: CGRect, color: NSColor, center: CGPoint, horizontalRadius: CGFloat, verticalRadius: CGFloat) {
+  init(color: NSColor, center: CGPoint, horizontalRadius: CGFloat, verticalRadius: CGFloat) {
     self.color = color
 
     self.center = center
 
     self.horizontalRadius = horizontalRadius
     self.verticalRadius = verticalRadius
-    
-    super.init(frame: frame)
   }
   
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("NSCoding not supported")
-  }
-  
-  override func draw(_ dirtyRect: NSRect) {
-    let figure = NSBezierPath(ovalIn: CGRect(x: center.x, y: center.y, width: horizontalRadius, height: verticalRadius))
+  func draw(canvas: CanvasProtocol) {
+    canvas.setColor(color: color)
     
-    color.set()
-    figure.lineWidth = 2
-    figure.stroke()
+    canvas.drawEllipse(center: center, horizontalRadius: horizontalRadius, verticalRadius: verticalRadius)
   }
 }

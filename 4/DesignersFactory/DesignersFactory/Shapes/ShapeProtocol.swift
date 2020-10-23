@@ -8,6 +8,8 @@
 
 import Cocoa
 
-protocol ShapeProtocol : NSView {
+protocol ShapeProtocol {
   var color: NSColor { get }
+  
+  func draw(canvas: CanvasProtocol)
 }
