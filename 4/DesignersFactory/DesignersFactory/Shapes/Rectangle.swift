@@ -16,13 +16,6 @@ class Rectangle: Equatable, ShapeProtocol {
   let width: CGFloat
   let height: CGFloat
   
-  static func ==(lhs: Rectangle, rhs: Rectangle) -> Bool {
-    return lhs.color == rhs.color
-      && lhs.leftTop == rhs.leftTop
-      && lhs.height == rhs.height
-      && lhs.width == rhs.width
-  }
-  
   init(color: NSColor, leftTop: CGPoint, width: CGFloat, height: CGFloat) {
     self.color = color
     
@@ -30,6 +23,13 @@ class Rectangle: Equatable, ShapeProtocol {
     
     self.width = width
     self.height = height
+  }
+  
+  static func ==(lhs: Rectangle, rhs: Rectangle) -> Bool {
+    return lhs.color == rhs.color
+      && lhs.leftTop == rhs.leftTop
+      && lhs.height == rhs.height
+      && lhs.width == rhs.width
   }
     
   func draw(canvas: CanvasProtocol) {

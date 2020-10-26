@@ -15,19 +15,19 @@ class Triangle: Equatable, ShapeProtocol {
   let vertex2: CGPoint
   let vertex3: CGPoint
   
-  static func ==(lhs: Triangle, rhs: Triangle) -> Bool {
-    return lhs.color == rhs.color
-      && lhs.vertex1 == rhs.vertex1
-      && lhs.vertex2 == rhs.vertex2
-      && lhs.vertex3 == rhs.vertex3
-  }
-  
   init(color: NSColor, vertex1: CGPoint, vertex2: CGPoint, vertex3: CGPoint) {
     self.color = color
     
     self.vertex1 = vertex1
     self.vertex2 = vertex2
     self.vertex3 = vertex3
+  }
+  
+  static func ==(lhs: Triangle, rhs: Triangle) -> Bool {
+    return lhs.color == rhs.color
+      && lhs.vertex1 == rhs.vertex1
+      && lhs.vertex2 == rhs.vertex2
+      && lhs.vertex3 == rhs.vertex3
   }
 
   func draw(canvas: CanvasProtocol) {

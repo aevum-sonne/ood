@@ -14,13 +14,6 @@ class RegularPolygon: Equatable, ShapeProtocol {
   let center: CGPoint
   let radius: Double
   let vertexCount: UInt
-  
-  static func ==(lhs: RegularPolygon, rhs: RegularPolygon) -> Bool {
-    return lhs.color == rhs.color
-      && lhs.center == rhs.center
-      && lhs.radius == rhs.radius
-      && lhs.vertexCount == rhs.vertexCount
-  }
 
   init(color: NSColor, center: CGPoint, radius: Double, vertexCount: UInt) {
     self.color = color
@@ -28,6 +21,13 @@ class RegularPolygon: Equatable, ShapeProtocol {
     self.center = center
     self.radius = radius
     self.vertexCount = vertexCount
+  }
+  
+  static func ==(lhs: RegularPolygon, rhs: RegularPolygon) -> Bool {
+    return lhs.color == rhs.color
+      && lhs.center == rhs.center
+      && lhs.radius == rhs.radius
+      && lhs.vertexCount == rhs.vertexCount
   }
   
   func draw(canvas: CanvasProtocol) {

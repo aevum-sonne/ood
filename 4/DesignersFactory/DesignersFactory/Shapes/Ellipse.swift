@@ -15,13 +15,6 @@ class Ellipse: Equatable, ShapeProtocol {
 
   let horizontalRadius: CGFloat
   let verticalRadius: CGFloat
-  
-  static func ==(lhs: Ellipse, rhs: Ellipse) -> Bool {
-    return lhs.color == rhs.color
-      && lhs.center == rhs.center
-      && lhs.horizontalRadius == rhs.horizontalRadius
-      && lhs.verticalRadius == rhs.verticalRadius
-  }
 
   init(color: NSColor, center: CGPoint, horizontalRadius: CGFloat, verticalRadius: CGFloat) {
     self.color = color
@@ -30,6 +23,13 @@ class Ellipse: Equatable, ShapeProtocol {
 
     self.horizontalRadius = horizontalRadius
     self.verticalRadius = verticalRadius
+  }
+  
+  static func ==(lhs: Ellipse, rhs: Ellipse) -> Bool {
+    return lhs.color == rhs.color
+      && lhs.center == rhs.center
+      && lhs.horizontalRadius == rhs.horizontalRadius
+      && lhs.verticalRadius == rhs.verticalRadius
   }
   
   func draw(canvas: CanvasProtocol) {
