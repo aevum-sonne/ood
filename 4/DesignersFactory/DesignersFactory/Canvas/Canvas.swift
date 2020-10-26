@@ -35,7 +35,7 @@ class Canvas: NSView, CanvasProtocol {
   }
 }
 
-class LineView: NSView {
+fileprivate class LineView: NSView {
   init(frame: CGRect, color: NSColor, from: CGPoint, to: CGPoint) {
     self.color = color
     self.from = from
@@ -64,7 +64,7 @@ class LineView: NSView {
   private let to: CGPoint
 }
 
-class EllipseView: NSView {
+fileprivate class EllipseView: NSView {
   init(frame: CGRect, color: NSColor, center: CGPoint, horizontalRadius: CGFloat, verticalRadius: CGFloat) {
     self.color = color
     self.center = center
