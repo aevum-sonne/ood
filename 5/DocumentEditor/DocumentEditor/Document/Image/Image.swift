@@ -32,8 +32,6 @@ class Image: ImageProtocol {
     }
     
     if (Constants.imageExtensions.firstIndex(of: sourceUrl.pathExtension) == nil) {
-      print("Source file isn't image")
-      
       throw DocumentError.invalidImageInsertion(.invalidUrlCreation)
     }
     
@@ -41,7 +39,6 @@ class Image: ImageProtocol {
     
     if let successUrl = FileManager.default.secureCopyItem(at: sourceUrl, to: resourcesUrl) {
       self.url = successUrl
-      print("Image successfully copied to \(url.path).")
     } else {
       throw DocumentError.invalidImageInsertion(.failedImageCopyingToResources)
     }
@@ -53,7 +50,7 @@ class Image: ImageProtocol {
       throw DocumentError.invalidImageInsertion(.invalidImageSize)
     }
     
-    resize(width: width, height: height)
+    try resize(width: width, height: height)
   }
   
   private func resolutionIsValid(width: Int, height: Int) -> Bool {
@@ -61,20 +58,12 @@ class Image: ImageProtocol {
   }
   
   deinit {
-    do {
-      try FileManager.default.removeItem(at: url)
-      let files = try FileManager.default.contentsOfDirectory(atPath: url.path)
-      print("All files in cache after deleting images: \(files)")
-    } catch let error {
-      print(error.localizedDescription)
-    }
+    try! FileManager.default.removeItem(at: url)
   }
   
-  func resize(width: Int, height: Int) {
+  func resize(width: Int, height: Int) throws {
     if !resolutionIsValid(width: width, height: height) {
-      print(DocumentError.invalidImageInsertion(.invalidImageSize).localizedDescription)
-      
-      return
+      throw DocumentError.invalidImageInsertion(.invalidImageSize)
     }
     
     history.saveAndExecuteCommand(command: ResizeImageCommand(image: self, resoulution: resolution, width: width, height: height))

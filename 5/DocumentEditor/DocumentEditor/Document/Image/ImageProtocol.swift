@@ -14,5 +14,5 @@ protocol ImageProtocol {
   var width: Int { get }
   var height: Int { get }
   
-  func resize(width: Int, height: Int)
+  func resize(width: Int, height: Int) throws
 }
