@@ -27,11 +27,11 @@ class History {
     position += 1
   }
   
-  private func canUndo() -> Bool {
+  func canUndo() -> Bool {
     return position > 0
   }
   
-  private func canRedo() -> Bool {
+  func canRedo() -> Bool {
     return position != commands.count
   }
   

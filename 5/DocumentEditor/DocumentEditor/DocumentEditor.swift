@@ -9,7 +9,11 @@
 import Foundation
 
 class DocumentEditor {
-  init() {
+  init(stream: StandardStream) {
+    self.stream = stream
+    
+    self.menu = Menu(stream: stream)
+    
     menu.addItem(shortcut: "ip", description: "Insert Paragraph <position>|end <text>", command: insertParagraph)
     menu.addItem(shortcut: "ii", description: "Insert Image <position>|end <width> <height> path", command: insertImage)
     menu.addItem(shortcut: "set", description: "Set title <title>", command: setTitle)
@@ -30,7 +34,7 @@ class DocumentEditor {
   private func insertParagraph(args: [String]) throws {
     if DocumentCommand.insertParagraph.length > args.count {
       let error = DocumentError.invalidParagraphInsertion(.invalidArgumentsCount)
-      print(error.localizedDescription)
+      print(error.localizedDescription, to: &stream.out)
       
       return
     }
@@ -41,14 +45,14 @@ class DocumentEditor {
       
       try document.insertParagraph(position: position, text: text)
     } catch {
-      print(error.localizedDescription)
+      print(error.localizedDescription, to: &stream.out)
     }
   }
   
   private func insertImage(args: [String]) throws {
     if DocumentCommand.insertImage.length > args.count {
       let error = DocumentError.invalidImageInsertion(.invalidArgumentsCount)
-      print(error.localizedDescription)
+      print(error.localizedDescription, to: &stream.out)
 
       return
     }
@@ -58,14 +62,14 @@ class DocumentEditor {
             
       guard let width = Int(args[2]), let height = Int(args[3]), width > 0 && height > 0 else {
         let error = DocumentError.invalidImageInsertion(.invalidImageSize)
-        print(error.localizedDescription)
+        print(error.localizedDescription, to: &stream.out)
         
         return
       }
             
       try document.insertImage(position: position, path: args[4], width: UInt(width), height: UInt(height))
     } catch let error {
-      print(error.localizedDescription)
+      print(error.localizedDescription, to: &stream.out)
     }
   }
   
@@ -80,7 +84,7 @@ class DocumentEditor {
   }
   
   private func list(args: [String]) {
-    print("Title: \(document.title)")
+    print("Title: \(document.title)", to: &stream.out)
     
     if document.count == 0 {
       return
@@ -88,19 +92,21 @@ class DocumentEditor {
     
     for position in 0...document.count-1 {
       guard let item = document.getItem(index: position) else {
-//        let error = DocumentError.invalidCommand(.invalidPosition)
-//        print(error.localizedDescription)
+        let error = DocumentError.invalidCommand(.invalidPosition)
+        print(error.localizedDescription, to: &stream.out)
         
         return
       }
       
-      print("\(position+1). ", terminator: "")
+      print("\(position+1). ", terminator: "", to: &stream.out)
       
       if (item.paragraph != nil) {
-        print("Paragraph: \(item.paragraph!.value)")
+        print("Paragraph: \(item.paragraph!.value)", to: &stream.out)
       } else {
         let image = item.image!
-        print("Image: filename \"\(image.path)\", resolution (\(image.width)x\(image.height)px)")
+        let filename = image.path.split(separator: "/").last!
+        
+        print("Image: path \"Resources/\(filename)\", resolution (\(image.width)x\(image.height)px)", to: &stream.out)
       }
     }
   }
@@ -108,7 +114,7 @@ class DocumentEditor {
   private func replaceText(args: [String]) {
     if DocumentCommand.replaceText.length > args.count {
       let error = DocumentError.invalidTextReplacement(.invalidArgumentsCount)
-      print(error.localizedDescription)
+      print(error.localizedDescription, to: &stream.out)
       
       return
     }
@@ -137,14 +143,14 @@ class DocumentEditor {
       
       item.paragraph!.setText(value: text)
     } catch let error {
-      print(error.localizedDescription)
+      print(error.localizedDescription, to: &stream.out)
     }
   }
   
   private func resizeImage(args: [String]) {
     if DocumentCommand.resizeImage.length != args.count {
       let error = DocumentError.invalidImageResizing(.invalidArgumentsCount)
-      print(error.localizedDescription)
+      print(error.localizedDescription, to: &stream.out)
       
       return
     }
@@ -159,7 +165,7 @@ class DocumentEditor {
       
       guard let width = Int(args[2]), let height = Int(args[3]) else {
         let error = DocumentError.invalidImageResizing(.invalidImageSize)
-        print(error.localizedDescription)
+        print(error.localizedDescription, to: &stream.out)
         
         return
       }
@@ -177,16 +183,16 @@ class DocumentEditor {
         throw DocumentError.invalidImageResizing(.invalidPosition)
       }
       
-      item.image!.resize(width: width, height: height)
+      try item.image!.resize(width: width, height: height)
     } catch let error {
-      print(error.localizedDescription)
+      print(error.localizedDescription, to: &stream.out)
     }
   }
   
   private func delete(args: [String]) {
     if DocumentCommand.deleteItem.length != args.count {
       let error = DocumentError.invalidTextReplacement(.invalidArgumentsCount)
-      print(error.localizedDescription)
+      print(error.localizedDescription, to: &stream.out)
       
       return
     }
@@ -197,7 +203,7 @@ class DocumentEditor {
       position = convertedToIntPosition
     } else {
       let error = DocumentError.invalidItemRemoving(.invalidPosition)
-      print(error.localizedDescription)
+      print(error.localizedDescription, to: &stream.out)
       
       return
     }
@@ -205,7 +211,7 @@ class DocumentEditor {
     do {
       try document.deleteItem(position: position)
     } catch let error {
-      print(error.localizedDescription)
+      print(error.localizedDescription, to: &stream.out)
     }
   }
   
@@ -214,11 +220,19 @@ class DocumentEditor {
   }
   
   private func redo(args: [String]) {
-    document.redo()
+    do {
+      try document.redo()
+    } catch let error {
+      print(error.localizedDescription, to: &stream.out)
+    }
   }
   
   private func undo(args: [String]) {
-    document.undo()
+    do {
+      try document.undo()
+    } catch let error {
+      print(error.localizedDescription, to: &stream.out)
+    }
   }
   
   private func save(args: [String]) throws {
@@ -239,6 +253,9 @@ class DocumentEditor {
     }
   }
   
-  private let menu = Menu()
+  private let menu: Menu
+  
+  private let stream: StandardStream
+  
   private let document: DocumentProtocol = Document()
 }

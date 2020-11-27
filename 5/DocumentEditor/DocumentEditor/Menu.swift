@@ -25,20 +25,24 @@ fileprivate class Item {
 }
 
 class Menu {
+  init(stream: StandardStream) {
+    self.stream = stream
+  }
+  
   func addItem(shortcut: String, description: String, command: @escaping CommandType) {
     items.append(Item(shortcut: shortcut, description: description, command: command))
   }
   
   func help() {
-    print("Available commands:")
+    print("Available commands:", to: &stream.out)
     
     for item in items {
-      print("\t\(item.shortcut): \(item.description)")
+      print("\t\(item.shortcut): \(item.description)", to: &stream.out)
     }
   }
   
   func run() {
-    while let command = readLine() {
+    while let command = stream.input.read() {
       do {
         let args = command.split { $0 == " " }.map { String($0) }
         
@@ -48,7 +52,7 @@ class Menu {
         
         try execute(args: args)
       } catch let error {
-        print(error.localizedDescription)
+        print(error.localizedDescription, to: &stream.out)
       }
     }
   }
@@ -68,6 +72,8 @@ class Menu {
       throw DocumentError.invalidCommand(.unknownCommand)
     }
   }
+  
+  private let stream: StandardStream
   
   private var items = [Item]()
 }

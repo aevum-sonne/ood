@@ -8,6 +8,7 @@
 
 import Foundation
 
-var editor = DocumentEditor()
+let stream = StandardStream()
+var editor = DocumentEditor(stream: stream)
 
 editor.start()
