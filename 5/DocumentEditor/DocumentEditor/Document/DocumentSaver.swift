@@ -19,20 +19,16 @@ class DocumentSaver {
   private let title: String
   
   func save(pathToFile: String) {
-    let url = createUrl(path: Constants.indexPagePath)
+    FileManager.default.createFile(atPath: pathToFile, contents: nil, attributes: nil)
     
-    if let outStream = OutputStream(url: url, append: true) {
+    let url = try! URL(string: Constants.filePrefix + pathToFile)
+    
+    if let outStream = OutputStream(url: url!, append: true) {
       let encodedHtmlContent = [UInt8](formHtmlDocumentContent().utf8)
       
       outStream.open()
       outStream.write(encodedHtmlContent, maxLength: encodedHtmlContent.count)
     }
-  }
-  
-  private func createUrl(path: String) -> URL {
-    let url = URL(string: Constants.indexPagePath)!
-    
-    return url
   }
   
   private func createDocument(url: URL) throws {

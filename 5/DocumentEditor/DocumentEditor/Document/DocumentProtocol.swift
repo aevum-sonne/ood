@@ -22,10 +22,10 @@ protocol DocumentProtocol {
   func deleteItem(position: Int) throws
   
   func canUndo() -> Bool
-  func undo()
+  func undo() throws
   
   func canRedo() -> Bool
-  func redo()
+  func redo() throws
   
   func save(path: String)
 }

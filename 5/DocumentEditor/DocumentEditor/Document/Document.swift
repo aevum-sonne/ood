@@ -72,27 +72,19 @@ class Document: DocumentProtocol {
   }
   
   func canUndo() -> Bool {
-    return false
+    return history.canUndo()
   }
   
-  func undo() {
-    do {
-      try history.undo()
-    } catch let error {
-      print(error.localizedDescription)
-    }
+  func undo() throws {
+    try history.undo()
   }
   
   func canRedo() -> Bool {
-    return false
+    return history.canRedo()
   }
   
-  func redo() {
-    do {
-      try history.redo()
-    } catch let error {
-      print(error.localizedDescription)
-    }
+  func redo() throws {
+    try history.redo()
   }
   
   func save(path: String) {
