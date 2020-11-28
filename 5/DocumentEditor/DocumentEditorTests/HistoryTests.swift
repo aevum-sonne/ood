@@ -91,25 +91,27 @@ class HistoryTests: XCTestCase {
     }
   }
   
-  func testOutOfMaxHistoryCapacityCommandCount() {
+  func testOutOfHistoryCapacityCommandCount() {
+    let capacity = 10
+    
     let history = History()
     let command = MockCommand()
     
-    for _ in 0...10 {
+    for _ in 0...capacity {
       history.saveAndExecuteCommand(command: command)
     }
     
-    for _ in 0...10 {
+    for _ in 0...capacity {
       XCTAssertNoThrow(try history.undo())
     }
     
-    for _ in 0...10 {
+    for _ in 0...capacity {
       XCTAssertNoThrow(try history.redo())
     }
     
     XCTAssertThrowsError(try history.redo())
     
-    for _ in 0...10 {
+    for _ in 0...capacity {
       XCTAssertNoThrow(try history.undo())
     }
     
