@@ -46,6 +46,13 @@
 		CE1FA477257158540005527C /* DocumentEditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FA476257158540005527C /* DocumentEditorTests.swift */; };
 		CE1FA47925716DE90005527C /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FA47825716DE90005527C /* HistoryTests.swift */; };
 		CE1FA47B257173A00005527C /* DocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FA47A257173A00005527C /* DocumentTests.swift */; };
+		CE332E5F25722886003B63F8 /* ParagraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE332E5E25722886003B63F8 /* ParagraphTests.swift */; };
+		CE332E6125722A3C003B63F8 /* ImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE332E6025722A3C003B63F8 /* ImageTests.swift */; };
+		CE332E6325722A9E003B63F8 /* InsertItemCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE332E6225722A9E003B63F8 /* InsertItemCommandTests.swift */; };
+		CE332E6525723902003B63F8 /* ReplaceTextCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE332E6425723902003B63F8 /* ReplaceTextCommandTests.swift */; };
+		CE332E6725723AF2003B63F8 /* ResizeImageCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE332E6625723AF2003B63F8 /* ResizeImageCommandTests.swift */; };
+		CE332E6B25723EED003B63F8 /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE332E6A25723EED003B63F8 /* TestConstants.swift */; };
+		CE332E6D257246BE003B63F8 /* TestFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE332E6C257246BE003B63F8 /* TestFunctions.swift */; };
 		CE479CD525483BB700914FA1 /* MenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE479CD425483BB700914FA1 /* MenuTests.swift */; };
 		CE479CD725483E9500914FA1 /* DocumentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE479CD625483E9500914FA1 /* DocumentError.swift */; };
 		CE479CDA2548687900914FA1 /* DocumentErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE479CD92548687900914FA1 /* DocumentErrorMessage.swift */; };
@@ -96,6 +103,13 @@
 		CE1FA476257158540005527C /* DocumentEditorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentEditorTests.swift; sourceTree = "<group>"; };
 		CE1FA47825716DE90005527C /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
 		CE1FA47A257173A00005527C /* DocumentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTests.swift; sourceTree = "<group>"; };
+		CE332E5E25722886003B63F8 /* ParagraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphTests.swift; sourceTree = "<group>"; };
+		CE332E6025722A3C003B63F8 /* ImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTests.swift; sourceTree = "<group>"; };
+		CE332E6225722A9E003B63F8 /* InsertItemCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertItemCommandTests.swift; sourceTree = "<group>"; };
+		CE332E6425723902003B63F8 /* ReplaceTextCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceTextCommandTests.swift; sourceTree = "<group>"; };
+		CE332E6625723AF2003B63F8 /* ResizeImageCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeImageCommandTests.swift; sourceTree = "<group>"; };
+		CE332E6A25723EED003B63F8 /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
+		CE332E6C257246BE003B63F8 /* TestFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFunctions.swift; sourceTree = "<group>"; };
 		CE479CCC25483B8100914FA1 /* DocumentEditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocumentEditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE479CD025483B8100914FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE479CD425483BB700914FA1 /* MenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTests.swift; sourceTree = "<group>"; };
@@ -174,14 +188,37 @@
 			path = StandardStream;
 			sourceTree = "<group>";
 		};
+		CE332E6825723B1E003B63F8 /* DocumentTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE332E6025722A3C003B63F8 /* ImageTests.swift */,
+				CE332E5E25722886003B63F8 /* ParagraphTests.swift */,
+				CE1FA47A257173A00005527C /* DocumentTests.swift */,
+			);
+			path = DocumentTests;
+			sourceTree = "<group>";
+		};
+		CE332E6925723B2C003B63F8 /* CommandTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE332E6625723AF2003B63F8 /* ResizeImageCommandTests.swift */,
+				CE332E6425723902003B63F8 /* ReplaceTextCommandTests.swift */,
+				CE332E6225722A9E003B63F8 /* InsertItemCommandTests.swift */,
+			);
+			path = CommandTests;
+			sourceTree = "<group>";
+		};
 		CE479CCD25483B8100914FA1 /* DocumentEditorTests */ = {
 			isa = PBXGroup;
 			children = (
-				CE1FA47A257173A00005527C /* DocumentTests.swift */,
+				CE332E6925723B2C003B63F8 /* CommandTests */,
+				CE332E6825723B1E003B63F8 /* DocumentTests */,
 				CE1FA47825716DE90005527C /* HistoryTests.swift */,
 				CE1FA476257158540005527C /* DocumentEditorTests.swift */,
 				CE479CD425483BB700914FA1 /* MenuTests.swift */,
 				CE479CD025483B8100914FA1 /* Info.plist */,
+				CE332E6A25723EED003B63F8 /* TestConstants.swift */,
+				CE332E6C257246BE003B63F8 /* TestFunctions.swift */,
 			);
 			path = DocumentEditorTests;
 			sourceTree = "<group>";
@@ -375,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1FA457257150060005527C /* StandardStream.swift in Sources */,
+				CE332E6125722A3C003B63F8 /* ImageTests.swift in Sources */,
 				CE1FA458257150060005527C /* StandardOutputStream.swift in Sources */,
 				CE1FA459257150060005527C /* StreamOutputType.swift in Sources */,
 				CE1FA45A257150060005527C /* StandardInputStream.swift in Sources */,
@@ -393,21 +431,27 @@
 				CE1FA465257150060005527C /* ParagraphProtocol.swift in Sources */,
 				CE1FA466257150060005527C /* Paragraph.swift in Sources */,
 				CE1FA467257150060005527C /* ImageProtocol.swift in Sources */,
+				CE332E6D257246BE003B63F8 /* TestFunctions.swift in Sources */,
+				CE332E6725723AF2003B63F8 /* ResizeImageCommandTests.swift in Sources */,
 				CE1FA468257150060005527C /* ImageResolution.swift in Sources */,
+				CE332E5F25722886003B63F8 /* ParagraphTests.swift in Sources */,
 				CE1FA469257150060005527C /* Image.swift in Sources */,
 				CE1FA46A257150060005527C /* DocumentItemArrayProtocol.swift in Sources */,
 				CE1FA46B257150060005527C /* DocumentItemArray.swift in Sources */,
 				CE1FA46C257150060005527C /* DocumentItem.swift in Sources */,
+				CE332E6B25723EED003B63F8 /* TestConstants.swift in Sources */,
 				CE1FA46D257150060005527C /* DocumentItemProtocol.swift in Sources */,
 				CE1FA46E257150060005527C /* DocumentProtocol.swift in Sources */,
 				CE1FA46F257150060005527C /* Document.swift in Sources */,
 				CE1FA470257150060005527C /* Text.swift in Sources */,
 				CE1FA471257150060005527C /* TextProtocol.swift in Sources */,
+				CE332E6525723902003B63F8 /* ReplaceTextCommandTests.swift in Sources */,
 				CE1FA472257150070005527C /* DocumentSaver.swift in Sources */,
 				CE1FA473257150070005527C /* History.swift in Sources */,
 				CE1FA474257150070005527C /* DocumentEditor.swift in Sources */,
 				CE1FA475257150070005527C /* Menu.swift in Sources */,
 				CE479CD525483BB700914FA1 /* MenuTests.swift in Sources */,
+				CE332E6325722A9E003B63F8 /* InsertItemCommandTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

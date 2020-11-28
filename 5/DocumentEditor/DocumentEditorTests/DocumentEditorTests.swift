@@ -71,10 +71,8 @@ class DocumentEditorTests: XCTestCase {
   }
   
   func testInsertMultipleImages() {
-    let pathToImage = #file.split(separator: "/").dropLast().joined(separator: "/") + "/Image.jpg"
-    
     let expected = "Title: \n1. Image: path \"Resources/Image.jpg\", resolution (100x100px)\n2. Image: path \"Resources/Image(1).jpg\", resolution (100x100px)\n"
-    let data = ["ii 1 100 100 \(pathToImage) ", "ii end 100 100 \(pathToImage)", "list", "delete 1", "delete 1"]
+    let data = ["ii 1 100 100 \(TestConstants.pathToImage) ", "ii end 100 100 \(TestConstants.pathToImage)", "list", "delete 1", "delete 1"]
     
     let stream = StandardStream(data: data)
     
@@ -82,13 +80,14 @@ class DocumentEditorTests: XCTestCase {
     editor.start()
     
     XCTAssertEqual(expected, stream.out.allLogs)
+    
+    TestFunctions.deleteImage(filename: "Image.jpg")
+    TestFunctions.deleteImage(filename: "Image(1).jpg")
   }
   
   func testResizeImage() {
-    let pathToImage = #file.split(separator: "/").dropLast().joined(separator: "/") + "/Image.jpg"
-    
     let expected = "Title: \n1. Image: path \"Resources/Image.jpg\", resolution (150x150px)\n"
-    let data = ["ii 1 100 100 \(pathToImage)", "resize 1 150 150", "list", "delete 1"]
+    let data = ["ii 1 100 100 \(TestConstants.pathToImage)", "resize 1 150 150", "list", "delete 1"]
     
     let stream = StandardStream(data: data)
     
@@ -96,6 +95,8 @@ class DocumentEditorTests: XCTestCase {
     editor.start()
     
     XCTAssertEqual(expected, stream.out.allLogs)
+    
+    TestFunctions.deleteImage(filename: "Image.jpg")
   }
   
   func testItemsList() {
