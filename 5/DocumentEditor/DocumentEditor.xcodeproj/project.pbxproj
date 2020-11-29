@@ -69,6 +69,7 @@
 		CE6EC130254B0D4B00FB55BE /* DeleteItemCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EC12F254B0D4B00FB55BE /* DeleteItemCommand.swift */; };
 		CE7E90EC254EE1EE00340567 /* ResizeImageCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E90EB254EE1EE00340567 /* ResizeImageCommand.swift */; };
 		CE7E90EE254EE68E00340567 /* ImageResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E90ED254EE68E00340567 /* ImageResolution.swift */; };
+		CE825E3625728AC200035E8A /* DeleteItemCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE825E3525728AC200035E8A /* DeleteItemCommandTests.swift */; };
 		CEB93700254C58D90081F1CD /* DocumentItemArrayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB936FF254C58D90081F1CD /* DocumentItemArrayProtocol.swift */; };
 		CEB93702254C5FB30081F1CD /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB93701254C5FB30081F1CD /* Text.swift */; };
 		CEB93704254C5FCE0081F1CD /* DocumentItemArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB93703254C5FCE0081F1CD /* DocumentItemArray.swift */; };
@@ -128,6 +129,7 @@
 		CE6EC12F254B0D4B00FB55BE /* DeleteItemCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemCommand.swift; sourceTree = "<group>"; };
 		CE7E90EB254EE1EE00340567 /* ResizeImageCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeImageCommand.swift; sourceTree = "<group>"; };
 		CE7E90ED254EE68E00340567 /* ImageResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResolution.swift; sourceTree = "<group>"; };
+		CE825E3525728AC200035E8A /* DeleteItemCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemCommandTests.swift; sourceTree = "<group>"; };
 		CEB936FF254C58D90081F1CD /* DocumentItemArrayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentItemArrayProtocol.swift; sourceTree = "<group>"; };
 		CEB93701254C5FB30081F1CD /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		CEB93703254C5FCE0081F1CD /* DocumentItemArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentItemArray.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		CE332E6925723B2C003B63F8 /* CommandTests */ = {
 			isa = PBXGroup;
 			children = (
+				CE825E3525728AC200035E8A /* DeleteItemCommandTests.swift */,
 				CE332E6625723AF2003B63F8 /* ResizeImageCommandTests.swift */,
 				CE332E6425723902003B63F8 /* ReplaceTextCommandTests.swift */,
 				CE332E6225722A9E003B63F8 /* InsertItemCommandTests.swift */,
@@ -448,6 +451,7 @@
 				CE332E6525723902003B63F8 /* ReplaceTextCommandTests.swift in Sources */,
 				CE1FA472257150070005527C /* DocumentSaver.swift in Sources */,
 				CE1FA473257150070005527C /* History.swift in Sources */,
+				CE825E3625728AC200035E8A /* DeleteItemCommandTests.swift in Sources */,
 				CE1FA474257150070005527C /* DocumentEditor.swift in Sources */,
 				CE1FA475257150070005527C /* Menu.swift in Sources */,
 				CE479CD525483BB700914FA1 /* MenuTests.swift in Sources */,

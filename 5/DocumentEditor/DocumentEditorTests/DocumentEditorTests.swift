@@ -99,20 +99,8 @@ class DocumentEditorTests: XCTestCase {
     TestFunctions.deleteImage(filename: "Image.jpg")
   }
   
-  func testItemsList() {
-    let expected = "Available commands:\n\tip: Insert Paragraph <position>|end <text>\n\tii: Insert Image <position>|end <width> <height> path\n\tset: Set title <title>\n\tlist: List of all available commands\n\treplace: Replace text <position> <text>\n\tresize: Resize image <position> <width> <height>\n\tdelete: Delete item <position>\n\thelp: Show help\n\tredo: Redo command\n\tundo: Undo command\n\tsave: Save to HTML <path>\n"
-    
-    let data = ["help"]
-    let stream = StandardStream(data: data)
-    
-    let editor = DocumentEditor(stream: stream)
-    editor.start()
-    
-    XCTAssertEqual(expected, stream.out.allLogs)
-  }
-  
   func testHelp() {
-    let expected = "Available commands:\n\tip: Insert Paragraph <position>|end <text>\n\tii: Insert Image <position>|end <width> <height> path\n\tset: Set title <title>\n\tlist: List of all available commands\n\treplace: Replace text <position> <text>\n\tresize: Resize image <position> <width> <height>\n\tdelete: Delete item <position>\n\thelp: Show help\n\tredo: Redo command\n\tundo: Undo command\n\tsave: Save to HTML <path>\n"
+    let expected = "Available commands:\n\tip: Insert Paragraph <position>|end <text>\n\tii: Insert Image <position>|end <width> <height> path\n\tset: Set title <title>\n\tlist: List of all available commands\n\treplace: Replace text <position> <text>\n\tresize: Resize image <position> <width> <height>\n\tdelete: Delete item <position>\n\thelp: Show help\n\tredo: Redo command\n\tundo: Undo command\n\tsave: Save to HTML <path>\n\tquit: Quit (removes all unused images)\n"
     
     let data = ["help"]
     let stream = StandardStream(data: data)
@@ -125,7 +113,11 @@ class DocumentEditorTests: XCTestCase {
   
   func testSave() {
     let expected = "Title: \n1. Paragraph: text1\n2. Paragraph: text2\n3. Paragraph: text3\n4. Paragraph: replaced\n"
-    let data = ["ip 1 text1", "ip 2 text2", "ip 3 text3", "ip end text4", "replace 4 replaced", "save Resources/index.html", "list"]
+    
+    let pathTestDir = #file.split(separator: "/").dropLast().joined(separator: "/")
+    let pathIndexHtml =  pathTestDir + "/index.html"
+    
+    let data = ["ip 1 text1", "ip 2 text2", "ip 3 text3", "ip end text4", "replace 4 replaced", "save \(pathIndexHtml)", "list"]
     
     let stream = StandardStream(data: data)
     

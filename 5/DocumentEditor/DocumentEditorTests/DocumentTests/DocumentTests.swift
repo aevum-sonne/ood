@@ -96,4 +96,27 @@ class DocumentTests: XCTestCase {
     
     try! FileManager.default.removeItem(at: url!)
   }
+  
+  func testEncodingHtmlEntities() {
+    let expected = "<!DOCTYPE html>\n<html>\n    <head>\n        <title>  </title>\n    <head>\n    <body>\n            <p> &amp;&amp;&amp; </p>\n            <p> 234u34&lt; &gt;&gt; &apos; &amp;&amp;&amp; &quot; &amp; </p>\n            <p> &lt; </p>\n            <p> &gt;&gt; </p>\n    <body>\n<html>\n"
+    
+    let document = Document()
+    
+    XCTAssertNoThrow(try document.insertParagraph(position: 1, text: "&&&"))
+    XCTAssertNoThrow(try document.insertParagraph(position: 2, text: "234u34< >> ' &&& \" &"))
+    XCTAssertNoThrow(try document.insertParagraph(position: 3, text: "<"))
+    XCTAssertNoThrow(try document.insertParagraph(position: 4, text: ">>"))
+    
+    let pathTestDir = #file.split(separator: "/").dropLast().joined(separator: "/")
+    let pathIndexHtml =  pathTestDir + "/index.html"
+        
+    document.save(path: pathIndexHtml)
+    
+    let url = URL(string: Constants.filePrefix + pathIndexHtml)
+    let htmlContent = try! String(contentsOf: url!)
+        
+    XCTAssertEqual(expected, htmlContent)
+    
+    try! FileManager.default.removeItem(at: url!)
+  }
 }
