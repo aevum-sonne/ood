@@ -22,10 +22,6 @@ class Image: ImageProtocol {
     return resolution.height
   }
   
-  private let history: History
-  private let url: URL
-  private let resolution: ImageResolution
-  
   init(path: String, width: Int, height: Int, history: History) throws {
     guard let sourceUrl = URL(string: Constants.filePrefix + path) else {
       throw DocumentError.invalidImageInsertion(.invalidUrlCreation)
@@ -53,12 +49,19 @@ class Image: ImageProtocol {
     try resize(width: width, height: height)
   }
   
+  private let history: History
+  private let url: URL
+  private let resolution: ImageResolution
+  
   private func resolutionIsValid(width: Int, height: Int) -> Bool {
-    return (width <= Constants.maxResolutionValue && height <= Constants.maxResolutionValue && width > Constants.minResolutionValue && height > Constants.minResolutionValue)
+    return (width < Constants.maxResolutionValue
+      && width > Constants.minResolutionValue
+      && height < Constants.maxResolutionValue
+      && height > Constants.minResolutionValue)
   }
   
   deinit {
-    try! FileManager.default.removeItem(at: url)
+    try? FileManager.default.removeItem(at: url)
   }
   
   func resize(width: Int, height: Int) throws {
@@ -77,24 +80,6 @@ extension NSImage {
   
   var width: CGFloat {
     return self.size.width
-  }
-  
-  static func resizeAtUrl(url: URL, width: Int, height: Int) {
-    let size = NSSize(width: CGFloat(width), height: CGFloat(height))
-    
-    var image = NSImage(byReferencing: url)
-
-    let resizedImage = image.resize(withSize: size)
-    
-    if resizedImage != nil {
-      image = resizedImage!
-    }
-    
-    do {
-      try image.saveImage(url: url)
-    } catch let error {
-      print("Cannot resize image at \(url). Error: \(error.localizedDescription)")
-    }
   }
 
   func resize(withSize targetSize: NSSize) -> NSImage? {

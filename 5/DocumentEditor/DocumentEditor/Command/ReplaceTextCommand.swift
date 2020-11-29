@@ -14,9 +14,6 @@ class ReplaceTextCommand: CommandProtocol {
     self.nextText = newText
   }
   
-  private var prevText: TextProtocol
-  private var nextText: TextProtocol
-  
   func execute() {
     swapText()
   }
@@ -28,4 +25,7 @@ class ReplaceTextCommand: CommandProtocol {
   func swapText() {
     (prevText.value, nextText.value) = (nextText.value, prevText.value)
   }
+  
+  private var prevText: TextProtocol
+  private var nextText: TextProtocol
 }

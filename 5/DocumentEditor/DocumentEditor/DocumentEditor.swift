@@ -25,6 +25,7 @@ class DocumentEditor {
     menu.addItem(shortcut: "redo", description: "Redo command", command: redo)
     menu.addItem(shortcut: "undo", description: "Undo command", command: undo)
     menu.addItem(shortcut: "save", description: "Save to HTML <path>", command: save)
+    menu.addItem(shortcut: "quit", description: "Quit (removes all unused images)", command: quit)
   }
   
   func start() {
@@ -58,7 +59,7 @@ class DocumentEditor {
     }
     
     do {
-      let position = try parsePosition(position: args[1])
+      var position = try parsePosition(position: args[1])
             
       guard let width = Int(args[2]), let height = Int(args[3]), width > 0 && height > 0 else {
         let error = DocumentError.invalidImageInsertion(.invalidImageSize)
@@ -68,6 +69,18 @@ class DocumentEditor {
       }
             
       try document.insertImage(position: position, path: args[4], width: UInt(width), height: UInt(height))
+      
+      // Save path to image
+      if position == nil {
+        position = document.count
+      }
+      
+      if let image = document.getItem(index: position! - 1)?.image {
+        if imagesInsertedInDocument?.append(image.path) == nil {
+          imagesInsertedInDocument = [image.path]
+        }
+      }
+      
     } catch let error {
       print(error.localizedDescription, to: &stream.out)
     }
@@ -243,6 +256,49 @@ class DocumentEditor {
     }
   }
   
+  private func quit(args: [String]) {
+    var imagesInWorkingCopyOfDocument: [String]?
+    
+    // Create array of correct working images if document not empty
+    if document.count != 0 {
+      for i in 0...document.count-1 {
+        let item = document.getItem(index: i)
+        
+        if let image = item?.image {
+          if imagesInWorkingCopyOfDocument?.append(image.path) == nil {
+            imagesInWorkingCopyOfDocument = [image.path]
+          }
+        }
+      }
+    }
+    
+    // Remove all inserted images if no images in working document
+    // or document is empty
+    if imagesInWorkingCopyOfDocument == nil || document.count == 0 {
+      if imagesInsertedInDocument != nil {
+        removeFiles(paths: imagesInsertedInDocument!)
+      }
+      
+      return
+    }
+    
+    // Subtract paths images in history from unworking images paths
+    let imagesInHistoryToRemove = Array(Set(imagesInsertedInDocument!).subtracting(imagesInWorkingCopyOfDocument!))
+    
+    // Remove images if arrays not equal
+    if !imagesInHistoryToRemove.isEmpty {
+      removeFiles(paths: imagesInHistoryToRemove)
+    }
+  }
+  
+  private func removeFiles(paths: [String]) {
+    for path in paths {
+      let url = URL(string: path)
+      
+      try? FileManager.default.removeItem(atPath: url!.absoluteString)
+    }
+  }
+  
   private func parsePosition(position pos: String) throws -> Int? {
     if "end" == pos.lowercased() {
       return nil
@@ -258,4 +314,6 @@ class DocumentEditor {
   private let stream: StandardStream
   
   private let document: DocumentProtocol = Document()
+  
+  private var imagesInsertedInDocument: [String]?
 }

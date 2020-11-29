@@ -16,11 +16,6 @@ class InsertItemCommand: CommandProtocol {
     self.position = position
   }
   
-  private var item: DocumentItemProtocol
-  private var items: DocumentItemArrayProtocol
-  
-  private var position: Int
-  
   func execute() {
     items.value.insert(item, at: position)
   }
@@ -28,4 +23,9 @@ class InsertItemCommand: CommandProtocol {
   func unexecute() {
     items.value.remove(at: position)
   }
+  
+  private var item: DocumentItemProtocol
+  private var items: DocumentItemArrayProtocol
+  
+  private var position: Int
 }

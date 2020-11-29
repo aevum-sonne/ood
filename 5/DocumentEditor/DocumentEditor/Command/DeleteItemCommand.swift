@@ -23,11 +23,6 @@ class DeleteItemCommand: CommandProtocol {
     }
   }
   
-  private var items: DocumentItemArrayProtocol
-  private var item: DocumentItemProtocol?
-  
-  private let position: Int
-  
   func execute() {
     items.value.remove(at: position)
   }
@@ -35,4 +30,9 @@ class DeleteItemCommand: CommandProtocol {
   func unexecute() {
     items.value.insert(item!, at: position)
   }
+  
+  private var items: DocumentItemArrayProtocol
+  private var item: DocumentItemProtocol?
+  
+  private let position: Int
 }

@@ -47,6 +47,8 @@ class Menu {
         let args = command.split { $0 == " " }.map { String($0) }
         
         if (args.first?.lowercased() == "quit") {
+          try execute(args: args)
+          
           break
         }
         

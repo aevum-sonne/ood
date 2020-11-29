@@ -56,5 +56,6 @@ class History {
   }
   
   private var commands = [CommandProtocol?]()
+    
   private var position: Int = 0
 }

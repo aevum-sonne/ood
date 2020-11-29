@@ -70,7 +70,7 @@ class Document: DocumentProtocol {
     
     history.saveAndExecuteCommand(command: DeleteItemCommand(items: items, position: position - 1))
   }
-  
+    
   func canUndo() -> Bool {
     return history.canUndo()
   }

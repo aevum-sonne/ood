@@ -21,7 +21,7 @@ class DocumentSaver {
   func save(pathToFile: String) {
     FileManager.default.createFile(atPath: pathToFile, contents: nil, attributes: nil)
     
-    let url = try! URL(string: Constants.filePrefix + pathToFile)
+    let url = URL(string: Constants.filePrefix + pathToFile)
     
     if let outStream = OutputStream(url: url!, append: true) {
       let encodedHtmlContent = [UInt8](formHtmlDocumentContent().utf8)
@@ -63,9 +63,9 @@ class DocumentSaver {
     return fullTag
   }
   
-  private func formImageTag(fileName: String, indentCount: Int) -> String {
+  private func formImageTag(path: String, indentCount: Int) -> String {
     let separator = "    "
-    let imageTag = "\(String(repeating: separator, count: indentCount))<img src=\"Images/\(fileName)\" \\>\n"
+    let imageTag = "\(String(repeating: separator, count: indentCount))<img src=\"\(path)\" \\>\n"
     
     return imageTag
   }
@@ -74,14 +74,28 @@ class DocumentSaver {
     var content = ""
     
     for item in items {
-      if item.paragraph != nil {
-        content += formFullTag(name: "p", content: item.paragraph!.value, indentCount: 3)
+      if let paragraph = item.paragraph {
+        let text = encodeParagraphText(text: paragraph.value)
+        
+        content += formFullTag(name: "p", content: text, indentCount: 3)
       } else {
-        content += formImageTag(fileName: item.image!.path, indentCount: 3)
+        content += formImageTag(path: item.image!.path, indentCount: 3)
       }
     }
     
     return content
+  }
+  
+  private let htmlEntities = [("&", "&amp;"), ("<", "&lt;"), (">", "&gt;"), ("'", "&apos;"), ("\"", "&quot;")]
+  
+  private func encodeParagraphText(text: String) -> String {
+    var encoded = text
+    
+    for entity in htmlEntities {
+      encoded = encoded.replacingOccurrences(of: entity.0, with: entity.1)
+    }
+    
+    return encoded
   }
 }
 
