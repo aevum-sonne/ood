@@ -65,7 +65,7 @@ class DocumentSaver {
   
   private func formImageTag(path: String, indentCount: Int) -> String {
     let separator = "    "
-    let imageTag = "\(String(repeating: separator, count: indentCount))<img src=\"\(path)\" \\>\n"
+    let imageTag = "\(String(repeating: separator, count: indentCount))<img src=\"\(path)\" />\n"
     
     return imageTag
   }
@@ -77,9 +77,9 @@ class DocumentSaver {
       if let paragraph = item.paragraph {
         let text = encodeParagraphText(text: paragraph.value)
         
-        content += formFullTag(name: "p", content: text, indentCount: 3)
+        content += formFullTag(name: "p", content: text, indentCount: 2)
       } else {
-        content += formImageTag(path: item.image!.path, indentCount: 3)
+        content += formImageTag(path: item.image!.path, indentCount: 2)
       }
     }
     
