@@ -41,11 +41,11 @@ class DocumentSaver {
     htmlContent += formTag(name: "html", indentCount: 0)
     htmlContent += formTag(name: "head", indentCount: 1)
     htmlContent += formFullTag(name: "title", content: title, indentCount: 2)
-    htmlContent += formTag(name: "head", indentCount: 1)
+    htmlContent += formTag(name: "/head", indentCount: 1)
     htmlContent += formTag(name: "body", indentCount: 1)
     htmlContent += formBodyContent()
-    htmlContent += formTag(name: "body", indentCount: 1)
-    htmlContent += formTag(name: "html", indentCount: 0)
+    htmlContent += formTag(name: "/body", indentCount: 1)
+    htmlContent += formTag(name: "/html", indentCount: 0)
     
     return htmlContent
   }
@@ -58,7 +58,7 @@ class DocumentSaver {
   }
   
   private func formFullTag(name: String, content: String, indentCount: Int) -> String {
-    let fullTag = formTag(name: name, indentCount: indentCount, insertNewline: false) + " \(content) " + formTag(name: "/" + name, indentCount: 0)
+    let fullTag = formTag(name: name, indentCount: indentCount, insertNewline: false) + "\(content)" + formTag(name: "/" + name, indentCount: 0)
     
     return fullTag
   }
