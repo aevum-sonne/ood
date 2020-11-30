@@ -27,12 +27,6 @@ struct StandardOutputStream: TextOutputStream {
     }
   }
   
-  var lastLog: String? {
-    get {
-      return logs?.last
-    }
-  }
-  
   var allLogs: String? {
     get {
       return logs?.joined(separator: "")

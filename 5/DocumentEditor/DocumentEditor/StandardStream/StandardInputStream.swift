@@ -13,10 +13,12 @@ fileprivate enum StreamInputType {
 }
 
 struct StandardInputStream {
+  // Constructor for readLine() input
   init() {
     self.type = .console
   }
   
+  // Constructor for manual input by string array
   init(data: [String]) {
     self.data = data
     
@@ -29,7 +31,6 @@ struct StandardInputStream {
         value = readLine()
         
         return value
-      
       case .data:
         value = data?.first
         
