@@ -9,6 +9,28 @@
 import XCTest
 
 class ImageTests: XCTestCase {
+  
+  func testConstructImageWithCorrectWidthAndHeightShouldNoThrow() {
+    let width = 1000
+    let height = 1000
+    
+    let history = History()
+    
+    XCTAssertNoThrow(try Image(path: TestConstants.pathToImage, width: width, height: height, history: history))
+    
+    TestFunctions.deleteImage(filename: "Image.jpg")
+  }
+  
+  func testConstructImageWithIncorrectWidthAndHeightShouldThrow() {
+    let width = 10000
+    let height = 0
+    
+    let history = History()
+    
+    XCTAssertThrowsError(try Image(path: TestConstants.pathToImage, width: width, height: height, history: history))
+    
+    TestFunctions.deleteImage(filename: "Image.jpg")
+  }
 
   func testExecuteImageResizing() {
     let width = 150
