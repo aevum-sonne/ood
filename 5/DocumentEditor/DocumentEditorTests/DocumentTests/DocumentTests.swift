@@ -75,7 +75,7 @@ class DocumentTests: XCTestCase {
   }
   
   func testSaveDocument() {
-    let expected = "<!DOCTYPE html>\n<html>\n    <head>\n        <title>  </title>\n    <head>\n    <body>\n            <p> 1 </p>\n            <p> 2 </p>\n            <p> 3 </p>\n            <p> 4 </p>\n    <body>\n<html>\n"
+    let expected = "<!DOCTYPE html>\n<html>\n    <head>\n        <title></title>\n    </head>\n    <body>\n        <p>1</p>\n        <p>2</p>\n        <p>3</p>\n        <p>4</p>\n    </body>\n</html>\n"
     
     let document = Document()
     
@@ -98,7 +98,7 @@ class DocumentTests: XCTestCase {
   }
   
   func testEncodingHtmlEntities() {
-    let expected = "<!DOCTYPE html>\n<html>\n    <head>\n        <title>  </title>\n    <head>\n    <body>\n            <p> &amp;&amp;&amp; </p>\n            <p> 234u34&lt; &gt;&gt; &apos; &amp;&amp;&amp; &quot; &amp; </p>\n            <p> &lt; </p>\n            <p> &gt;&gt; </p>\n    <body>\n<html>\n"
+    let expected = "<!DOCTYPE html>\n<html>\n    <head>\n        <title></title>\n    </head>\n    <body>\n        <p>&amp;&amp;&amp;</p>\n        <p>234u34&lt; &gt;&gt; &apos; &amp;&amp;&amp; &quot; &amp;</p>\n        <p>&lt;</p>\n        <p>&gt;&gt;</p>\n    </body>\n</html>\n"
     
     let document = Document()
     
