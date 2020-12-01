@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:../../../TextStream"
+      name = "TextStream">
+      <FileRef
+         location = "group:TextStream.xcodeproj">
+      </FileRef>
+      <Group
+         location = "group:TextStream"
+         name = "TextStream">
+         <Group
+            location = "group:OStream"
+            name = "OStream">
+            <FileRef
+               location = "group:TextOType.swift">
+            </FileRef>
+            <FileRef
+               location = "group:OStream.swift">
+            </FileRef>
+            <FileRef
+               location = "group:TextOStream.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:IStream"
+            name = "IStream">
+            <FileRef
+               location = "group:TextIType.swift">
+            </FileRef>
+            <FileRef
+               location = "group:TextIStream.swift">
+            </FileRef>
+            <FileRef
+               location = "group:IStream.swift">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:TextStream.m">
+         </FileRef>
+         <FileRef
+            location = "group:TextStream.h">
+         </FileRef>
+         <FileRef
+            location = "group:TextStream-Bridging-Header.h">
+         </FileRef>
+      </Group>
+   </Group>
+   <FileRef
+      location = "self:">
+   </FileRef>
+</Workspace>
