@@ -76,26 +76,26 @@ fileprivate class GumballMachineContext: GumballMachineContextProtocol {
   private var state: StateProtocol?
 }
 
-public class GumballMachine {
+class GumballMachine: GumballMachineProtocol {
   init(numBalls: UInt, outStream: TextStream.OStream) {
-    self.context = GumballMachineContext(numBalls: numBalls, outStream: outStream)
+    self.gumballMachineContext = GumballMachineContext(numBalls: numBalls, outStream: outStream)
   }
   
   func ejectQuarter() {
-    context.ejectQuarter()
+    gumballMachineContext.ejectQuarter()
   }
   
   func insertQuarter() {
-    context.insertQuarter()
+    gumballMachineContext.insertQuarter()
   }
   
   func turnCrank() {
-    context.turnCrank()
+    gumballMachineContext.turnCrank()
   }
   
   func toString() -> String {
-    return context.toString()
+    return gumballMachineContext.toString()
   }
   
-  private let context: GumballMachineContext
+  private let gumballMachineContext: GumballMachineContext
 }

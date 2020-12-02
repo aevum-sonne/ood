@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE833E09257795760001C094 /* GumballMachineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833E08257795760001C094 /* GumballMachineProtocol.swift */; };
+		CE833E0C2577968E0001C094 /* GumballMachineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833E08257795760001C094 /* GumballMachineProtocol.swift */; };
 		CED9D05A257627B600A1A043 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9D059257627B600A1A043 /* main.swift */; };
 		CED9D0612576290700A1A043 /* StateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9D0602576290700A1A043 /* StateProtocol.swift */; };
 		CED9D0632576295A00A1A043 /* GumballMachineContextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9D0622576295A00A1A043 /* GumballMachineContextProtocol.swift */; };
@@ -51,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE833E08257795760001C094 /* GumballMachineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GumballMachineProtocol.swift; sourceTree = "<group>"; };
 		CED9D056257627B600A1A043 /* GumballMachine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GumballMachine; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED9D059257627B600A1A043 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		CED9D0602576290700A1A043 /* StateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProtocol.swift; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 				CED9D14E257688AD00A1A043 /* State */,
 				CED9D059257627B600A1A043 /* main.swift */,
 				CED9D0622576295A00A1A043 /* GumballMachineContextProtocol.swift */,
+				CE833E08257795760001C094 /* GumballMachineProtocol.swift */,
 				CED9D06C25762D0200A1A043 /* GumballMachine.swift */,
 			);
 			path = GumballMachine;
@@ -316,6 +320,7 @@
 				CED9D06725762B1700A1A043 /* SoldOutState.swift in Sources */,
 				CED9D06525762A3700A1A043 /* SoldState.swift in Sources */,
 				CED9D06925762B5100A1A043 /* HasQuarterState.swift in Sources */,
+				CE833E09257795760001C094 /* GumballMachineProtocol.swift in Sources */,
 				CED9D06B25762B6C00A1A043 /* NoQuarterState.swift in Sources */,
 				CED9D0612576290700A1A043 /* StateProtocol.swift in Sources */,
 				CED9D0632576295A00A1A043 /* GumballMachineContextProtocol.swift in Sources */,
@@ -326,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE833E0C2577968E0001C094 /* GumballMachineProtocol.swift in Sources */,
 				CED9D15125768A4600A1A043 /* GumballMachineActions.swift in Sources */,
 				CED9D144257679BA00A1A043 /* StateProtocol.swift in Sources */,
 				CED9D145257679BA00A1A043 /* GumballMachineContextProtocol.swift in Sources */,

@@ -9,35 +9,38 @@
 import Foundation
 import TextStream
 
-let outStream = TextStream.OStream(type: .console)
+func playWithGumballMachine(gumballMachine: GumballMachineProtocol) {
+  gumballMachine.insertQuarter()
+  gumballMachine.turnCrank()
 
+  print(gumballMachine.toString())
+
+  gumballMachine.insertQuarter()
+  gumballMachine.ejectQuarter()
+  gumballMachine.turnCrank()
+
+  print(gumballMachine.toString())
+
+  gumballMachine.insertQuarter()
+  gumballMachine.turnCrank()
+  gumballMachine.insertQuarter()
+  gumballMachine.turnCrank()
+  gumballMachine.ejectQuarter()
+
+  print(gumballMachine.toString())
+
+  gumballMachine.insertQuarter()
+  gumballMachine.insertQuarter()
+  gumballMachine.turnCrank()
+  gumballMachine.insertQuarter()
+  gumballMachine.turnCrank()
+  gumballMachine.insertQuarter()
+  gumballMachine.turnCrank()
+
+  print(gumballMachine.toString())
+}
+
+let outStream = TextStream.OStream(type: .console)
 let gumballMachine = GumballMachine(numBalls: 5, outStream: outStream)
 
-gumballMachine.insertQuarter()
-gumballMachine.turnCrank()
-
-print(gumballMachine.toString())
-
-gumballMachine.insertQuarter()
-gumballMachine.ejectQuarter()
-gumballMachine.turnCrank()
-
-print(gumballMachine.toString())
-
-gumballMachine.insertQuarter()
-gumballMachine.turnCrank()
-gumballMachine.insertQuarter()
-gumballMachine.turnCrank()
-gumballMachine.ejectQuarter()
-
-print(gumballMachine.toString())
-
-gumballMachine.insertQuarter()
-gumballMachine.insertQuarter()
-gumballMachine.turnCrank()
-gumballMachine.insertQuarter()
-gumballMachine.turnCrank()
-gumballMachine.insertQuarter()
-gumballMachine.turnCrank()
-
-print(gumballMachine.toString())
+playWithGumballMachine(gumballMachine: gumballMachine)

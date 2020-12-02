@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol GumballMachineContextProtocol {
+protocol GumballMachineContextProtocol: GumballMachineProtocol {
   var ballCount: UInt { get }
   
   func releaseBall()
