@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE833DD9257792490001C094 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DD8257792490001C094 /* main.swift */; };
+		CE833DE9257793AF0001C094 /* MultiGumballMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE1257793AF0001C094 /* MultiGumballMachine.swift */; };
+		CE833DEA257793AF0001C094 /* MultiGumballMachineContextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE2257793AF0001C094 /* MultiGumballMachineContextProtocol.swift */; };
+		CE833DEB257793AF0001C094 /* StateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE4257793AF0001C094 /* StateProtocol.swift */; };
+		CE833DEC257793AF0001C094 /* NoQuarterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE5257793AF0001C094 /* NoQuarterState.swift */; };
+		CE833DED257793AF0001C094 /* HasQuarterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE6257793AF0001C094 /* HasQuarterState.swift */; };
+		CE833DEE257793AF0001C094 /* SoldOutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE7257793AF0001C094 /* SoldOutState.swift */; };
+		CE833DEF257793AF0001C094 /* SoldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE8257793AF0001C094 /* SoldState.swift */; };
+		CE833E04257793F30001C094 /* libTextStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE833E03257793DD0001C094 /* libTextStream.a */; };
+		CE833E10257797530001C094 /* MultiGumballMachineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833E0F257797530001C094 /* MultiGumballMachineProtocol.swift */; };
+		CE833E142577AB880001C094 /* NaiveMultiGumballMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833E132577AB880001C094 /* NaiveMultiGumballMachine.swift */; };
+		CE833E162577ABBE0001C094 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833E152577ABBE0001C094 /* State.swift */; };
+		CE833E1E2577C2740001C094 /* MultiGumballMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833E1D2577C2740001C094 /* MultiGumballMachineTests.swift */; };
+		CE833E232577C3B70001C094 /* NaiveMultiGumballMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833E132577AB880001C094 /* NaiveMultiGumballMachine.swift */; };
+		CE833E242577C3B70001C094 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833E152577ABBE0001C094 /* State.swift */; };
+		CE833E252577C3B70001C094 /* MultiGumballMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE1257793AF0001C094 /* MultiGumballMachine.swift */; };
+		CE833E262577C3B70001C094 /* MultiGumballMachineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833E0F257797530001C094 /* MultiGumballMachineProtocol.swift */; };
+		CE833E272577C3B70001C094 /* MultiGumballMachineContextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE2257793AF0001C094 /* MultiGumballMachineContextProtocol.swift */; };
+		CE833E282577C3B70001C094 /* StateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE4257793AF0001C094 /* StateProtocol.swift */; };
+		CE833E292577C3B70001C094 /* NoQuarterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE5257793AF0001C094 /* NoQuarterState.swift */; };
+		CE833E2A2577C3B70001C094 /* HasQuarterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE6257793AF0001C094 /* HasQuarterState.swift */; };
+		CE833E2B2577C3B70001C094 /* SoldOutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE7257793AF0001C094 /* SoldOutState.swift */; };
+		CE833E2C2577C3B70001C094 /* SoldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE8257793AF0001C094 /* SoldState.swift */; };
+		CE833E342577C41F0001C094 /* libTextStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE833E03257793DD0001C094 /* libTextStream.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE833E02257793DD0001C094 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE833DF2257793DD0001C094 /* TextStream.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CED9D09125764FE700A1A043;
+			remoteInfo = TextStream;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE833DD3257792490001C094 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CE833DD5257792490001C094 /* MultiGumballMachine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MultiGumballMachine; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE833DD8257792490001C094 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		CE833DE1257793AF0001C094 /* MultiGumballMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiGumballMachine.swift; sourceTree = "<group>"; };
+		CE833DE2257793AF0001C094 /* MultiGumballMachineContextProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiGumballMachineContextProtocol.swift; sourceTree = "<group>"; };
+		CE833DE4257793AF0001C094 /* StateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateProtocol.swift; sourceTree = "<group>"; };
+		CE833DE5257793AF0001C094 /* NoQuarterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoQuarterState.swift; sourceTree = "<group>"; };
+		CE833DE6257793AF0001C094 /* HasQuarterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasQuarterState.swift; sourceTree = "<group>"; };
+		CE833DE7257793AF0001C094 /* SoldOutState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoldOutState.swift; sourceTree = "<group>"; };
+		CE833DE8257793AF0001C094 /* SoldState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoldState.swift; sourceTree = "<group>"; };
+		CE833DF2257793DD0001C094 /* TextStream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TextStream.xcodeproj; sourceTree = "<group>"; };
+		CE833DF7257793DD0001C094 /* TextOType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOType.swift; sourceTree = "<group>"; };
+		CE833DF8257793DD0001C094 /* OStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OStream.swift; sourceTree = "<group>"; };
+		CE833DF9257793DD0001C094 /* TextOStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOStream.swift; sourceTree = "<group>"; };
+		CE833DFB257793DD0001C094 /* TextIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIType.swift; sourceTree = "<group>"; };
+		CE833DFC257793DD0001C094 /* TextIStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIStream.swift; sourceTree = "<group>"; };
+		CE833DFD257793DD0001C094 /* IStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStream.swift; sourceTree = "<group>"; };
+		CE833DFE257793DD0001C094 /* TextStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextStream.m; sourceTree = "<group>"; };
+		CE833DFF257793DD0001C094 /* TextStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextStream.h; sourceTree = "<group>"; };
+		CE833E00257793DD0001C094 /* TextStream-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TextStream-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE833E0F257797530001C094 /* MultiGumballMachineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiGumballMachineProtocol.swift; sourceTree = "<group>"; };
+		CE833E132577AB880001C094 /* NaiveMultiGumballMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaiveMultiGumballMachine.swift; sourceTree = "<group>"; };
+		CE833E152577ABBE0001C094 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		CE833E1B2577C2740001C094 /* MultiGumballMachineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiGumballMachineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE833E1D2577C2740001C094 /* MultiGumballMachineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiGumballMachineTests.swift; sourceTree = "<group>"; };
+		CE833E1F2577C2740001C094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE833DD2257792490001C094 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE833E04257793F30001C094 /* libTextStream.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE833E182577C2740001C094 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE833E342577C41F0001C094 /* libTextStream.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE833DCC257792490001C094 = {
+			isa = PBXGroup;
+			children = (
+				CE833E122577AB680001C094 /* NaiveMultiGumballMachine */,
+				CE833DD7257792490001C094 /* MultiGumballMachine */,
+				CE833E1C2577C2740001C094 /* MultiGumballMachineTests */,
+				CE833DD6257792490001C094 /* Products */,
+				CE833DF0257793DD0001C094 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CE833DD6257792490001C094 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE833DD5257792490001C094 /* MultiGumballMachine */,
+				CE833E1B2577C2740001C094 /* MultiGumballMachineTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE833DD7257792490001C094 /* MultiGumballMachine */ = {
+			isa = PBXGroup;
+			children = (
+				CE833DE1257793AF0001C094 /* MultiGumballMachine.swift */,
+				CE833E0F257797530001C094 /* MultiGumballMachineProtocol.swift */,
+				CE833DE2257793AF0001C094 /* MultiGumballMachineContextProtocol.swift */,
+				CE833DE3257793AF0001C094 /* State */,
+				CE833DD8257792490001C094 /* main.swift */,
+			);
+			path = MultiGumballMachine;
+			sourceTree = "<group>";
+		};
+		CE833DE3257793AF0001C094 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				CE833DE4257793AF0001C094 /* StateProtocol.swift */,
+				CE833DE5257793AF0001C094 /* NoQuarterState.swift */,
+				CE833DE6257793AF0001C094 /* HasQuarterState.swift */,
+				CE833DE7257793AF0001C094 /* SoldOutState.swift */,
+				CE833DE8257793AF0001C094 /* SoldState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		CE833DF0257793DD0001C094 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE833DF1257793DD0001C094 /* TextStream */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE833DF1257793DD0001C094 /* TextStream */ = {
+			isa = PBXGroup;
+			children = (
+				CE833DF2257793DD0001C094 /* TextStream.xcodeproj */,
+				CE833DF5257793DD0001C094 /* TextStream */,
+			);
+			name = TextStream;
+			path = ../../TextStream;
+			sourceTree = "<group>";
+		};
+		CE833DF3257793DD0001C094 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE833E03257793DD0001C094 /* libTextStream.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE833DF5257793DD0001C094 /* TextStream */ = {
+			isa = PBXGroup;
+			children = (
+				CE833DF6257793DD0001C094 /* OStream */,
+				CE833DFA257793DD0001C094 /* IStream */,
+				CE833DFE257793DD0001C094 /* TextStream.m */,
+				CE833DFF257793DD0001C094 /* TextStream.h */,
+				CE833E00257793DD0001C094 /* TextStream-Bridging-Header.h */,
+			);
+			path = TextStream;
+			sourceTree = "<group>";
+		};
+		CE833DF6257793DD0001C094 /* OStream */ = {
+			isa = PBXGroup;
+			children = (
+				CE833DF7257793DD0001C094 /* TextOType.swift */,
+				CE833DF8257793DD0001C094 /* OStream.swift */,
+				CE833DF9257793DD0001C094 /* TextOStream.swift */,
+			);
+			path = OStream;
+			sourceTree = "<group>";
+		};
+		CE833DFA257793DD0001C094 /* IStream */ = {
+			isa = PBXGroup;
+			children = (
+				CE833DFB257793DD0001C094 /* TextIType.swift */,
+				CE833DFC257793DD0001C094 /* TextIStream.swift */,
+				CE833DFD257793DD0001C094 /* IStream.swift */,
+			);
+			path = IStream;
+			sourceTree = "<group>";
+		};
+		CE833E122577AB680001C094 /* NaiveMultiGumballMachine */ = {
+			isa = PBXGroup;
+			children = (
+				CE833E132577AB880001C094 /* NaiveMultiGumballMachine.swift */,
+				CE833E152577ABBE0001C094 /* State.swift */,
+			);
+			path = NaiveMultiGumballMachine;
+			sourceTree = "<group>";
+		};
+		CE833E1C2577C2740001C094 /* MultiGumballMachineTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE833E1D2577C2740001C094 /* MultiGumballMachineTests.swift */,
+				CE833E1F2577C2740001C094 /* Info.plist */,
+			);
+			path = MultiGumballMachineTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE833DD4257792490001C094 /* MultiGumballMachine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE833DDC257792490001C094 /* Build configuration list for PBXNativeTarget "MultiGumballMachine" */;
+			buildPhases = (
+				CE833DD1257792490001C094 /* Sources */,
+				CE833DD2257792490001C094 /* Frameworks */,
+				CE833DD3257792490001C094 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MultiGumballMachine;
+			productName = MultiGumballMachine;
+			productReference = CE833DD5257792490001C094 /* MultiGumballMachine */;
+			productType = "com.apple.product-type.tool";
+		};
+		CE833E1A2577C2740001C094 /* MultiGumballMachineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE833E202577C2740001C094 /* Build configuration list for PBXNativeTarget "MultiGumballMachineTests" */;
+			buildPhases = (
+				CE833E172577C2740001C094 /* Sources */,
+				CE833E182577C2740001C094 /* Frameworks */,
+				CE833E192577C2740001C094 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MultiGumballMachineTests;
+			productName = MultiGumballMachineTests;
+			productReference = CE833E1B2577C2740001C094 /* MultiGumballMachineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE833DCD257792490001C094 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = User;
+				TargetAttributes = {
+					CE833DD4257792490001C094 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					CE833E1A2577C2740001C094 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = CE833DD0257792490001C094 /* Build configuration list for PBXProject "MultiGumballMachine" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE833DCC257792490001C094;
+			productRefGroup = CE833DD6257792490001C094 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CE833DF3257793DD0001C094 /* Products */;
+					ProjectRef = CE833DF2257793DD0001C094 /* TextStream.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				CE833DD4257792490001C094 /* MultiGumballMachine */,
+				CE833E1A2577C2740001C094 /* MultiGumballMachineTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CE833E03257793DD0001C094 /* libTextStream.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTextStream.a;
+			remoteRef = CE833E02257793DD0001C094 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE833E192577C2740001C094 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE833DD1257792490001C094 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE833DE9257793AF0001C094 /* MultiGumballMachine.swift in Sources */,
+				CE833DEB257793AF0001C094 /* StateProtocol.swift in Sources */,
+				CE833E10257797530001C094 /* MultiGumballMachineProtocol.swift in Sources */,
+				CE833E162577ABBE0001C094 /* State.swift in Sources */,
+				CE833DEA257793AF0001C094 /* MultiGumballMachineContextProtocol.swift in Sources */,
+				CE833DEE257793AF0001C094 /* SoldOutState.swift in Sources */,
+				CE833DED257793AF0001C094 /* HasQuarterState.swift in Sources */,
+				CE833DEF257793AF0001C094 /* SoldState.swift in Sources */,
+				CE833DD9257792490001C094 /* main.swift in Sources */,
+				CE833E142577AB880001C094 /* NaiveMultiGumballMachine.swift in Sources */,
+				CE833DEC257793AF0001C094 /* NoQuarterState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE833E172577C2740001C094 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE833E272577C3B70001C094 /* MultiGumballMachineContextProtocol.swift in Sources */,
+				CE833E292577C3B70001C094 /* NoQuarterState.swift in Sources */,
+				CE833E252577C3B70001C094 /* MultiGumballMachine.swift in Sources */,
+				CE833E2A2577C3B70001C094 /* HasQuarterState.swift in Sources */,
+				CE833E232577C3B70001C094 /* NaiveMultiGumballMachine.swift in Sources */,
+				CE833E2C2577C3B70001C094 /* SoldState.swift in Sources */,
+				CE833E1E2577C2740001C094 /* MultiGumballMachineTests.swift in Sources */,
+				CE833E2B2577C3B70001C094 /* SoldOutState.swift in Sources */,
+				CE833E242577C3B70001C094 /* State.swift in Sources */,
+				CE833E282577C3B70001C094 /* StateProtocol.swift in Sources */,
+				CE833E262577C3B70001C094 /* MultiGumballMachineProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CE833DDA257792490001C094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE833DDB257792490001C094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		CE833DDD257792490001C094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CE833DDE257792490001C094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CE833E212577C2740001C094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MultiGumballMachineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = user.MultiGumballMachineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CE833E222577C2740001C094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MultiGumballMachineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = user.MultiGumballMachineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE833DD0257792490001C094 /* Build configuration list for PBXProject "MultiGumballMachine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE833DDA257792490001C094 /* Debug */,
+				CE833DDB257792490001C094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE833DDC257792490001C094 /* Build configuration list for PBXNativeTarget "MultiGumballMachine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE833DDD257792490001C094 /* Debug */,
+				CE833DDE257792490001C094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE833E202577C2740001C094 /* Build configuration list for PBXNativeTarget "MultiGumballMachineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE833E212577C2740001C094 /* Debug */,
+				CE833E222577C2740001C094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE833DCD257792490001C094 /* Project object */;
+}
