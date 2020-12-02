@@ -14,8 +14,6 @@ import ShapeDrawingLib
 
 import TextStream
 
-import StandardStream
-
 public func paintPicture(painter: ShapeDrawingLib.CanvasPainter) {
   let triangle = ShapeDrawingLib.Triangle(p1: CGPoint(x: 10, y: 15), p2: CGPoint(x: 100, y: 200), p3: CGPoint(x: 150, y: 250))
   let rectangle = ShapeDrawingLib.Rectangle(leftTop: CGPoint(x: 30, y: 40), width: 18, height: 24)

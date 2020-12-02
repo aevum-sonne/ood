@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import StandardStream
 import TextStream
 
 public class ModernGraphicsRenderer {
