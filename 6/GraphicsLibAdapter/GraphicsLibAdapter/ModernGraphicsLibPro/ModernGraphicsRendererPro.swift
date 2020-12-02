@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import StandardStream
+import TextStream
 
 public class ModernGraphicsRendererPro {
-  public init(stream: StandardStream) {
-    self.stream = stream
+  public init(outStream: TextStream.OStream) {
+    self.out = outStream
     
     drawing = false
   }
@@ -27,7 +27,7 @@ public class ModernGraphicsRendererPro {
       throw ModernRendererError.logicError("Drawing has already begun.")
     }
         
-    print("<draw>", to: &stream.out)
+    print("<draw>", to: &out.stream)
     
     drawing = true
   }
@@ -37,9 +37,9 @@ public class ModernGraphicsRendererPro {
       throw ModernRendererError.logicError("Drawing has not been started.")
     }
     
-    print("\t<line fromX=\(Int(start.x)) fromY=\(Int(start.y)) toX=\(Int(end.x)) toY=\(Int(end.y))>", to: &stream.out)
-    print("\t\t<color r=\(color.r) g=\(color.g) b=\(color.b) a=\(color.a)>", to: &stream.out)
-    print("\t</line>", to: &stream.out)
+    print("\t<line fromX=\(Int(start.x)) fromY=\(Int(start.y)) toX=\(Int(end.x)) toY=\(Int(end.y))>", to: &out.stream)
+    print("\t\t<color r=\(color.r) g=\(color.g) b=\(color.b) a=\(color.a)>", to: &out.stream)
+    print("\t</line>", to: &out.stream)
   }
   
   public func endDraw() throws {
@@ -47,12 +47,12 @@ public class ModernGraphicsRendererPro {
       throw ModernRendererError.logicError("Drawing has not been started.")
     }
     
-    print("</draw>", to: &stream.out)
+    print("</draw>", to: &out.stream)
 
     drawing = false
   }
   
-  private let stream: StandardStream
+  private let out: TextStream.OStream
   
   private var drawing: Bool
 }

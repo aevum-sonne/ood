@@ -22,7 +22,6 @@
 		CE36FDE62570EEB6003B0856 /* libModernGraphicsLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE986CB9256FB86E00321933 /* libModernGraphicsLib.a */; };
 		CE36FDE72570EEB6003B0856 /* libModernGraphicsLibPro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE986D2D256FE68E00321933 /* libModernGraphicsLibPro.a */; };
 		CE36FDE82570EEB6003B0856 /* libShapeDrawingLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE986CD2256FB97F00321933 /* libShapeDrawingLib.a */; };
-		CE36FDE92570EEB6003B0856 /* libStandardStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE986D00256FDC0400321933 /* libStandardStream.a */; };
 		CE986CAD256FB83A00321933 /* GraphicsLib.h in Headers */ = {isa = PBXBuildFile; fileRef = CE986CAC256FB83A00321933 /* GraphicsLib.h */; };
 		CE986CAF256FB83A00321933 /* GraphicsLib.m in Sources */ = {isa = PBXBuildFile; fileRef = CE986CAE256FB83A00321933 /* GraphicsLib.m */; };
 		CE986CB3256FB84500321933 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B8A75256D494B00E64D53 /* Canvas.swift */; };
@@ -40,12 +39,6 @@
 		CE986CDD256FB98D00321933 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4FE5D5256D8F67005478B2 /* Triangle.swift */; };
 		CE986CDE256FB98D00321933 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4FE5D7256D8F7E005478B2 /* Rectangle.swift */; };
 		CE986CDF256FB9AB00321933 /* libShapeDrawingLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE986CD2256FB97F00321933 /* libShapeDrawingLib.a */; };
-		CE986D03256FDC0400321933 /* StandardStream.h in Headers */ = {isa = PBXBuildFile; fileRef = CE986D02256FDC0400321933 /* StandardStream.h */; };
-		CE986D05256FDC0400321933 /* StandardStream.m in Sources */ = {isa = PBXBuildFile; fileRef = CE986D04256FDC0400321933 /* StandardStream.m */; };
-		CE986D09256FDC0900321933 /* StandardOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE986CF0256FD2C200321933 /* StandardOutputStream.swift */; };
-		CE986D0A256FDC0900321933 /* StandardStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE986CFA256FDB9C00321933 /* StandardStream.swift */; };
-		CE986D0B256FDC0900321933 /* OutputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE986CF8256FDB4F00321933 /* OutputType.swift */; };
-		CE986D0C256FDC6C00321933 /* libStandardStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE986D00256FDC0400321933 /* libStandardStream.a */; };
 		CE986D1E256FDFC300321933 /* GraphicsLibPro.h in Headers */ = {isa = PBXBuildFile; fileRef = CE986D1D256FDFC300321933 /* GraphicsLibPro.h */; };
 		CE986D20256FDFC300321933 /* GraphicsLibPro.m in Sources */ = {isa = PBXBuildFile; fileRef = CE986D1F256FDFC300321933 /* GraphicsLibPro.m */; };
 		CE986D26256FDFDB00321933 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE986D25256FDFDB00321933 /* Canvas.swift */; };
@@ -58,11 +51,13 @@
 		CE986D40256FE7CE00321933 /* ModernRendererError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE986D3F256FE7CE00321933 /* ModernRendererError.swift */; };
 		CE986D4A256FEB4100321933 /* App.h in Headers */ = {isa = PBXBuildFile; fileRef = CE986D49256FEB4100321933 /* App.h */; };
 		CE986D4C256FEB4100321933 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = CE986D4B256FEB4100321933 /* App.m */; };
-		CE986D52256FEB5200321933 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE986D51256FEB5200321933 /* App.swift */; };
 		CE986D53256FEBAA00321933 /* libApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE986D47256FEB4100321933 /* libApp.a */; };
 		CE986D57256FEE5800321933 /* RGBAColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE986D56256FEE5800321933 /* RGBAColor.swift */; };
 		CED92EED2570DD8D00595A55 /* GraphicsLibAdapterPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED92EEC2570DD8D00595A55 /* GraphicsLibAdapterPro.swift */; };
 		CED92EEE2570DDAE00595A55 /* GraphicsLibAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE986D592570035400321933 /* GraphicsLibAdapter.swift */; };
+		CEDE44682577DF3E0024F743 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE986D51256FEB5200321933 /* App.swift */; };
+		CEDE447D2577DF8D0024F743 /* libTextStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDE447C2577DF890024F743 /* libTextStream.a */; };
+		CEDE44802577E3B40024F743 /* libTextStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDE447C2577DF890024F743 /* libTextStream.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,13 +89,6 @@
 			remoteGlobalIDString = CE986CD1256FB97F00321933;
 			remoteInfo = ShapeDrawingLib;
 		};
-		CE986D0D256FDC6C00321933 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE1B89F7256D2B6700E64D53 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE986CFF256FDC0400321933;
-			remoteInfo = StandardStream;
-		};
 		CE986D3A256FE6D500321933 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE1B89F7256D2B6700E64D53 /* Project object */;
@@ -121,6 +109,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = CE986D46256FEB4100321933;
 			remoteInfo = App;
+		};
+		CEDE447B2577DF890024F743 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEDE446B2577DF890024F743 /* TextStream.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CED9D09125764FE700A1A043;
+			remoteInfo = TextStream;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -170,12 +165,6 @@
 		CE986CD2256FB97F00321933 /* libShapeDrawingLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShapeDrawingLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE986CD4256FB97F00321933 /* ShapeDrawingLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeDrawingLib.h; sourceTree = "<group>"; };
 		CE986CD6256FB97F00321933 /* ShapeDrawingLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeDrawingLib.m; sourceTree = "<group>"; };
-		CE986CF0256FD2C200321933 /* StandardOutputStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardOutputStream.swift; sourceTree = "<group>"; };
-		CE986CF8256FDB4F00321933 /* OutputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputType.swift; sourceTree = "<group>"; };
-		CE986CFA256FDB9C00321933 /* StandardStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardStream.swift; sourceTree = "<group>"; };
-		CE986D00256FDC0400321933 /* libStandardStream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStandardStream.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE986D02256FDC0400321933 /* StandardStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StandardStream.h; sourceTree = "<group>"; };
-		CE986D04256FDC0400321933 /* StandardStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StandardStream.m; sourceTree = "<group>"; };
 		CE986D1B256FDFC300321933 /* libGraphicsLibPro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGraphicsLibPro.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE986D1D256FDFC300321933 /* GraphicsLibPro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphicsLibPro.h; sourceTree = "<group>"; };
 		CE986D1F256FDFC300321933 /* GraphicsLibPro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphicsLibPro.m; sourceTree = "<group>"; };
@@ -196,6 +185,16 @@
 		CE986D56256FEE5800321933 /* RGBAColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBAColor.swift; sourceTree = "<group>"; };
 		CE986D592570035400321933 /* GraphicsLibAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsLibAdapter.swift; sourceTree = "<group>"; };
 		CED92EEC2570DD8D00595A55 /* GraphicsLibAdapterPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsLibAdapterPro.swift; sourceTree = "<group>"; };
+		CEDE446B2577DF890024F743 /* TextStream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TextStream.xcodeproj; sourceTree = "<group>"; };
+		CEDE44702577DF890024F743 /* TextOType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOType.swift; sourceTree = "<group>"; };
+		CEDE44712577DF890024F743 /* OStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OStream.swift; sourceTree = "<group>"; };
+		CEDE44722577DF890024F743 /* TextOStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOStream.swift; sourceTree = "<group>"; };
+		CEDE44742577DF890024F743 /* TextIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIType.swift; sourceTree = "<group>"; };
+		CEDE44752577DF890024F743 /* TextIStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIStream.swift; sourceTree = "<group>"; };
+		CEDE44762577DF890024F743 /* IStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStream.swift; sourceTree = "<group>"; };
+		CEDE44772577DF890024F743 /* TextStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextStream.m; sourceTree = "<group>"; };
+		CEDE44782577DF890024F743 /* TextStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextStream.h; sourceTree = "<group>"; };
+		CEDE44792577DF890024F743 /* TextStream-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TextStream-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +207,7 @@
 				CE986D53256FEBAA00321933 /* libApp.a in Frameworks */,
 				CE986CDF256FB9AB00321933 /* libShapeDrawingLib.a in Frameworks */,
 				CE986D39256FE6D500321933 /* libGraphicsLibPro.a in Frameworks */,
-				CE986D0C256FDC6C00321933 /* libStandardStream.a in Frameworks */,
+				CEDE447D2577DF8D0024F743 /* libTextStream.a in Frameworks */,
 				CE986CC4256FB88D00321933 /* libGraphicsLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,13 +216,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDE44802577E3B40024F743 /* libTextStream.a in Frameworks */,
 				CE36FDE42570EEB6003B0856 /* libApp.a in Frameworks */,
 				CE36FDCB2570EA24003B0856 /* libGraphicsLib.a in Frameworks */,
 				CE36FDE52570EEB6003B0856 /* libGraphicsLibPro.a in Frameworks */,
 				CE36FDE62570EEB6003B0856 /* libModernGraphicsLib.a in Frameworks */,
 				CE36FDE72570EEB6003B0856 /* libModernGraphicsLibPro.a in Frameworks */,
 				CE36FDE82570EEB6003B0856 /* libShapeDrawingLib.a in Frameworks */,
-				CE36FDE92570EEB6003B0856 /* libStandardStream.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,13 +241,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CE986CD0256FB97F00321933 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE986CFE256FDC0400321933 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -285,7 +277,7 @@
 				CE36FDD12570EA51003B0856 /* GraphicsLibAdapter */,
 				CE36FDC72570EA24003B0856 /* GraphicsLibAdapterTests */,
 				CE1B8A00256D2B6700E64D53 /* Products */,
-				CE1B8AAA256D612600E64D53 /* Frameworks */,
+				CEDE44692577DF890024F743 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -296,20 +288,12 @@
 				CE986CAA256FB83A00321933 /* libGraphicsLib.a */,
 				CE986CB9256FB86E00321933 /* libModernGraphicsLib.a */,
 				CE986CD2256FB97F00321933 /* libShapeDrawingLib.a */,
-				CE986D00256FDC0400321933 /* libStandardStream.a */,
 				CE986D1B256FDFC300321933 /* libGraphicsLibPro.a */,
 				CE986D2D256FE68E00321933 /* libModernGraphicsLibPro.a */,
 				CE986D47256FEB4100321933 /* libApp.a */,
 				CE36FDC62570EA24003B0856 /* GraphicsLibAdapterTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CE1B8AAA256D612600E64D53 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CE36FDC72570EA24003B0856 /* GraphicsLibAdapterTests */ = {
@@ -329,7 +313,6 @@
 				CE986CAB256FB83A00321933 /* GraphicsLib */,
 				CE986CBA256FB86E00321933 /* ModernGraphicsLib */,
 				CE986CD3256FB97F00321933 /* ShapeDrawingLib */,
-				CE986D01256FDC0400321933 /* StandardStream */,
 				CE986D1C256FDFC300321933 /* GraphicsLibPro */,
 				CE986D2E256FE68E00321933 /* ModernGraphicsLibPro */,
 				CE986D48256FEB4100321933 /* App */,
@@ -370,18 +353,6 @@
 				CE986CD6256FB97F00321933 /* ShapeDrawingLib.m */,
 			);
 			path = ShapeDrawingLib;
-			sourceTree = "<group>";
-		};
-		CE986D01256FDC0400321933 /* StandardStream */ = {
-			isa = PBXGroup;
-			children = (
-				CE986CF0256FD2C200321933 /* StandardOutputStream.swift */,
-				CE986CFA256FDB9C00321933 /* StandardStream.swift */,
-				CE986CF8256FDB4F00321933 /* OutputType.swift */,
-				CE986D02256FDC0400321933 /* StandardStream.h */,
-				CE986D04256FDC0400321933 /* StandardStream.m */,
-			);
-			path = StandardStream;
 			sourceTree = "<group>";
 		};
 		CE986D1C256FDFC300321933 /* GraphicsLibPro */ = {
@@ -430,6 +401,64 @@
 			path = Adapters;
 			sourceTree = "<group>";
 		};
+		CEDE44692577DF890024F743 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEDE446A2577DF890024F743 /* TextStream */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEDE446A2577DF890024F743 /* TextStream */ = {
+			isa = PBXGroup;
+			children = (
+				CEDE446B2577DF890024F743 /* TextStream.xcodeproj */,
+				CEDE446E2577DF890024F743 /* TextStream */,
+			);
+			name = TextStream;
+			path = ../../TextStream;
+			sourceTree = "<group>";
+		};
+		CEDE446C2577DF890024F743 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEDE447C2577DF890024F743 /* libTextStream.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEDE446E2577DF890024F743 /* TextStream */ = {
+			isa = PBXGroup;
+			children = (
+				CEDE446F2577DF890024F743 /* OStream */,
+				CEDE44732577DF890024F743 /* IStream */,
+				CEDE44772577DF890024F743 /* TextStream.m */,
+				CEDE44782577DF890024F743 /* TextStream.h */,
+				CEDE44792577DF890024F743 /* TextStream-Bridging-Header.h */,
+			);
+			path = TextStream;
+			sourceTree = "<group>";
+		};
+		CEDE446F2577DF890024F743 /* OStream */ = {
+			isa = PBXGroup;
+			children = (
+				CEDE44702577DF890024F743 /* TextOType.swift */,
+				CEDE44712577DF890024F743 /* OStream.swift */,
+				CEDE44722577DF890024F743 /* TextOStream.swift */,
+			);
+			path = OStream;
+			sourceTree = "<group>";
+		};
+		CEDE44732577DF890024F743 /* IStream */ = {
+			isa = PBXGroup;
+			children = (
+				CEDE44742577DF890024F743 /* TextIType.swift */,
+				CEDE44752577DF890024F743 /* TextIStream.swift */,
+				CEDE44762577DF890024F743 /* IStream.swift */,
+			);
+			path = IStream;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -454,14 +483,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE986CD5256FB97F00321933 /* ShapeDrawingLib.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE986CFC256FDC0400321933 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE986D03256FDC0400321933 /* StandardStream.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,7 +528,6 @@
 				CE986CC6256FB88D00321933 /* PBXTargetDependency */,
 				CE986CC9256FB88D00321933 /* PBXTargetDependency */,
 				CE986CE1256FB9AB00321933 /* PBXTargetDependency */,
-				CE986D0E256FDC6C00321933 /* PBXTargetDependency */,
 				CE986D3B256FE6D500321933 /* PBXTargetDependency */,
 				CE986D3E256FE6D500321933 /* PBXTargetDependency */,
 				CE986D55256FEBAA00321933 /* PBXTargetDependency */,
@@ -586,23 +606,6 @@
 			productReference = CE986CD2256FB97F00321933 /* libShapeDrawingLib.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		CE986CFF256FDC0400321933 /* StandardStream */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CE986D06256FDC0400321933 /* Build configuration list for PBXNativeTarget "StandardStream" */;
-			buildPhases = (
-				CE986CFC256FDC0400321933 /* Headers */,
-				CE986CFD256FDC0400321933 /* Sources */,
-				CE986CFE256FDC0400321933 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = StandardStream;
-			productName = StandardStream;
-			productReference = CE986D00256FDC0400321933 /* libStandardStream.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		CE986D1A256FDFC300321933 /* GraphicsLibPro */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE986D21256FDFC300321933 /* Build configuration list for PBXNativeTarget "GraphicsLibPro" */;
@@ -679,9 +682,6 @@
 					CE986CD1256FB97F00321933 = {
 						CreatedOnToolsVersion = 11.5;
 					};
-					CE986CFF256FDC0400321933 = {
-						CreatedOnToolsVersion = 11.5;
-					};
 					CE986D1A256FDFC300321933 = {
 						CreatedOnToolsVersion = 11.5;
 						LastSwiftMigration = 1150;
@@ -707,13 +707,18 @@
 			mainGroup = CE1B89F6256D2B6700E64D53;
 			productRefGroup = CE1B8A00256D2B6700E64D53 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CEDE446C2577DF890024F743 /* Products */;
+					ProjectRef = CEDE446B2577DF890024F743 /* TextStream.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CE1B89FE256D2B6700E64D53 /* GraphicsLibAdapter */,
 				CE986CA9256FB83A00321933 /* GraphicsLib */,
 				CE986CB8256FB86E00321933 /* ModernGraphicsLib */,
 				CE986CD1256FB97F00321933 /* ShapeDrawingLib */,
-				CE986CFF256FDC0400321933 /* StandardStream */,
 				CE986D1A256FDFC300321933 /* GraphicsLibPro */,
 				CE986D2C256FE68E00321933 /* ModernGraphicsLibPro */,
 				CE986D46256FEB4100321933 /* App */,
@@ -721,6 +726,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CEDE447C2577DF890024F743 /* libTextStream.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTextStream.a;
+			remoteRef = CEDE447B2577DF890024F743 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CE36FDC42570EA24003B0856 /* Resources */ = {
@@ -785,17 +800,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE986CFD256FDC0400321933 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE986D05256FDC0400321933 /* StandardStream.m in Sources */,
-				CE986D09256FDC0900321933 /* StandardOutputStream.swift in Sources */,
-				CE986D0B256FDC0900321933 /* OutputType.swift in Sources */,
-				CE986D0A256FDC0900321933 /* StandardStream.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CE986D18256FDFC300321933 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -826,8 +830,8 @@
 				CE986D4C256FEB4100321933 /* App.m in Sources */,
 				CE36FDBB2570E4F7003B0856 /* ModernGraphicsRendererPro.swift in Sources */,
 				CE36FDC02570E559003B0856 /* RGBAColor.swift in Sources */,
+				CEDE44682577DF3E0024F743 /* App.swift in Sources */,
 				CED92EED2570DD8D00595A55 /* GraphicsLibAdapterPro.swift in Sources */,
-				CE986D52256FEB5200321933 /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -853,11 +857,6 @@
 			isa = PBXTargetDependency;
 			target = CE986CD1256FB97F00321933 /* ShapeDrawingLib */;
 			targetProxy = CE986CE0256FB9AB00321933 /* PBXContainerItemProxy */;
-		};
-		CE986D0E256FDC6C00321933 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE986CFF256FDC0400321933 /* StandardStream */;
-			targetProxy = CE986D0D256FDC6C00321933 /* PBXContainerItemProxy */;
 		};
 		CE986D3B256FE6D500321933 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1108,28 +1107,6 @@
 			};
 			name = Release;
 		};
-		CE986D07256FDC0400321933 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		CE986D08256FDC0400321933 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		CE986D22256FDFC300321933 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1294,15 +1271,6 @@
 			buildConfigurations = (
 				CE986CD9256FB97F00321933 /* Debug */,
 				CE986CDA256FB97F00321933 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CE986D06256FDC0400321933 /* Build configuration list for PBXNativeTarget "StandardStream" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CE986D07256FDC0400321933 /* Debug */,
-				CE986D08256FDC0400321933 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

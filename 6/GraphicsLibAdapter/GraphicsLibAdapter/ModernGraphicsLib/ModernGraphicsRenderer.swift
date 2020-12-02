@@ -8,10 +8,11 @@
 
 import Foundation
 import StandardStream
+import TextStream
 
 public class ModernGraphicsRenderer {
-  public required init(stream: StandardStream) {
-    self.stream = stream
+  public required init(outStream: TextStream.OStream) {
+    self.out = outStream
     
     drawing = false
   }
@@ -27,7 +28,7 @@ public class ModernGraphicsRenderer {
       throw RendererError.logicError("Drawing has already begun.")
     }
         
-    print("<draw>", to: &stream.out)
+    print("<draw>", to: &out.stream)
     
     drawing = true
   }
@@ -37,7 +38,7 @@ public class ModernGraphicsRenderer {
       throw RendererError.logicError("DrawLine is allowed between beginDraw()/endDraw() only")
     }
     
-    print("\t<line fromX=\(Int(start.x)) fromY=\(Int(start.y)) toX=\(Int(end.x)) toY=\(Int(end.y)) />", to: &stream.out)
+    print("\t<line fromX=\(Int(start.x)) fromY=\(Int(start.y)) toX=\(Int(end.x)) toY=\(Int(end.y)) />", to: &out.stream)
   }
   
   public func endDraw() throws {
@@ -45,12 +46,12 @@ public class ModernGraphicsRenderer {
       throw RendererError.logicError("Drawing has not been started.")
     }
     
-    print("</draw>", to: &stream.out)
+    print("</draw>", to: &out.stream)
 
     drawing = false
   }
   
-  private var stream: StandardStream
+  private var out: TextStream.OStream
   
   private var drawing: Bool
 }

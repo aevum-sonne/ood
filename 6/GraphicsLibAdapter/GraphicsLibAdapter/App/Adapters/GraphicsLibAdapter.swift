@@ -18,7 +18,7 @@ public class GraphicsLibAdapter: CanvasProtocol {
   }
   
   deinit {
-    try! renderer.endDraw()
+    try? renderer.endDraw()
   }
   
   public func moveTo(x: Int, y: Int) {

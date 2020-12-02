@@ -12,6 +12,8 @@ import GraphicsLib
 import ModernGraphicsLib
 import ShapeDrawingLib
 
+import TextStream
+
 import StandardStream
 
 public func paintPicture(painter: ShapeDrawingLib.CanvasPainter) {
@@ -23,16 +25,17 @@ public func paintPicture(painter: ShapeDrawingLib.CanvasPainter) {
 }
 
 public func paintPictureOnCanvas() {
-  let canvas = GraphicsLib.Canvas()
+  let outStream = TextStream.OStream(type: .console)
+  let canvas = GraphicsLib.Canvas(outStream: outStream)
   let painter = ShapeDrawingLib.CanvasPainter(canvas: canvas)
 
   paintPicture(painter: painter)
 }
 
 public func paintPictureOnModernGraphicsRenderer() {
-  let stream = StandardStream(outType: .console)
+  let outStream = TextStream.OStream(type: .console)
 
-  let renderer = ModernGraphicsLib.ModernGraphicsRenderer(stream: stream)
+  let renderer = ModernGraphicsLib.ModernGraphicsRenderer(outStream: outStream)
   do {
     try renderer.beginDraw()
     try renderer.endDraw()
