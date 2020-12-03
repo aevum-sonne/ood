@@ -10,10 +10,11 @@ import Foundation
 
 protocol MultiGumballMachineContextProtocol: MultiGumballMachineProtocol {
   var ballCount: UInt { get }
-  
   var quarterCount: UInt { get }
   
   func addQuarter()
+  func addGumball()
+  
   func ejectAllQuarters()
   func releaseBall()
   

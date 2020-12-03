@@ -54,6 +54,15 @@ fileprivate class MultiGumballMachineContext: MultiGumballMachineContextProtocol
     quarterCount = 0
   }
   
+  func insertGumball() {
+    state!.insertGumball()
+  }
+  
+  func addGumball() {
+    ballCount += 1
+    print("Gumball inserted. Gumball count: \(ballCount)", to: &out.stream)
+  }
+  
   func turnCrank() {
     state!.turnCrank()
     state!.dispense()
@@ -103,12 +112,16 @@ class MultiGumballMachine: MultiGumballMachineProtocol {
     self.gumballMachineContext = MultiGumballMachineContext(numBalls: numBalls, outStream: outStream)
   }
   
+  func insertQuarter() {
+    gumballMachineContext.insertQuarter()
+  }
+  
   func ejectQuarter() {
     gumballMachineContext.ejectQuarter()
   }
   
-  func insertQuarter() {
-    gumballMachineContext.insertQuarter()
+  func insertGumball() {
+    gumballMachineContext.insertGumball()
   }
   
   func turnCrank() {

@@ -25,6 +25,10 @@ class NoQuarterState: StateProtocol {
     print("You haven't inserted a quarter", to: &out.stream)
   }
   
+  func insertGumball() {
+    gumballMachine.addGumball()
+  }
+  
   func turnCrank() {
     print("You turned but there's no quarter", to: &out.stream)
   }

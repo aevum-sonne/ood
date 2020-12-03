@@ -25,6 +25,10 @@ class HasQuarterState: StateProtocol {
     gumballMachine.setNoQuarterState()
   }
   
+  func insertGumball() {
+    gumballMachine.addGumball()
+  }
+  
   func turnCrank() {
     print("You turned...", to: &out.stream)
     

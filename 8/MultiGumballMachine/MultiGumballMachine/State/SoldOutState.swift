@@ -28,6 +28,10 @@ class SoldOutState: StateProtocol {
     }
   }
   
+  func insertGumball() {
+    gumballMachine.addGumball()
+  }
+  
   func turnCrank() {
     print("You turned but there's no gumballs", to: &out.stream)
   }

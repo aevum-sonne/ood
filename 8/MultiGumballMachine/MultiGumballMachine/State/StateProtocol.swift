@@ -11,6 +11,9 @@ import Foundation
 protocol StateProtocol {
   func insertQuarter()
   func ejectQuarter()
+  
+  func insertGumball()
+  
   func turnCrank()
   func dispense()
   

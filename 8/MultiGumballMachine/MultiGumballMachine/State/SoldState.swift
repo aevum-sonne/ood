@@ -24,6 +24,10 @@ class SoldState: StateProtocol {
     print("Sorry you already turned the crank", to: &out.stream)
   }
   
+  func insertGumball() {
+    print("Sorry you cannot insert gumball while we're already giving you a gumball", to: &out.stream)
+  }
+  
   func turnCrank() {
     print("Turning twice doesn't get you another gumball", to: &out.stream)
   }
