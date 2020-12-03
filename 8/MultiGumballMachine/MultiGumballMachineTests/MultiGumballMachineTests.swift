@@ -12,7 +12,7 @@ import XCTest
 import TextStream
 
 class MultiGumballMachineTests: XCTestCase {
-
+  
   
   // MARK: NoQuarterState tests
   
@@ -75,6 +75,17 @@ class MultiGumballMachineTests: XCTestCase {
     
     XCTAssertEqual(expectedMessage, outStream.lastLog)
     XCTAssertEqual(expectedMessage, naiveOutStream.lastLog)
+  }
+  
+  func testCorrectNoQuarterStateInsertGumball() {
+    let expectedMessage = "Gumball inserted. Gumball count: 6"
+    
+    let outStream = TextStream.OStream(type: .logs)
+    let gumballMachine = MultiGumballMachine(numBalls: 5, outStream: outStream)
+    
+    gumballMachine.insertGumball()
+    
+    XCTAssertEqual(expectedMessage, outStream.lastLog)
   }
   
   
@@ -291,6 +302,18 @@ class MultiGumballMachineTests: XCTestCase {
     XCTAssertEqual(expectedMessage, naiveOutStream.lastLog)
   }
   
+  func testCorrectHasQuarterStateInsertGumball() {
+    let expectedMessage = "Gumball inserted. Gumball count: 6"
+    
+    let outStream = TextStream.OStream(type: .logs)
+    let gumballMachine = MultiGumballMachine(numBalls: 5, outStream: outStream)
+    
+    gumballMachine.insertQuarter()
+    gumballMachine.insertGumball()
+    
+    XCTAssertEqual(expectedMessage, outStream.lastLog)
+  }
+  
   
   // MARK: SoldOutState tests
   
@@ -307,6 +330,17 @@ class MultiGumballMachineTests: XCTestCase {
     gumballMachine.ejectQuarter()
     
     XCTAssertEqual(expectedMessage, outStream.lastLog)
+    
+    let naiveOutStream = TextStream.OStream(type: .logs)
+    let naiveMachine = NaiveMultiGumballMachine(numBalls: 5, outStream: naiveOutStream)
+    
+    naiveMachine.insertQuarter()
+    naiveMachine.insertQuarter()
+    naiveMachine.turnCrank()
+    
+    naiveMachine.ejectQuarter()
+    
+    XCTAssertEqual(expectedMessage, naiveOutStream.lastLog)
   }
   
   func testCorrectSoldOutStateEjectQuarterIfQuartersInMachine() {
@@ -324,6 +358,24 @@ class MultiGumballMachineTests: XCTestCase {
     gumballMachine.turnCrank()
     
     gumballMachine.ejectQuarter()
+    
+    XCTAssertEqual(expectedMessage, outStream.lastLog)
+  }
+  
+  func testCorrectSoldOutStateInsertGumball() {
+    let expectedMessage = "Gumball inserted. Gumball count: 5"
+    
+    let outStream = TextStream.OStream(type: .logs)
+    let gumballMachine = MultiGumballMachine(numBalls: 1, outStream: outStream)
+    
+    gumballMachine.insertQuarter()
+    gumballMachine.turnCrank()
+    
+    gumballMachine.insertGumball()
+    gumballMachine.insertGumball()
+    gumballMachine.insertGumball()
+    gumballMachine.insertGumball()
+    gumballMachine.insertGumball()
     
     XCTAssertEqual(expectedMessage, outStream.lastLog)
   }

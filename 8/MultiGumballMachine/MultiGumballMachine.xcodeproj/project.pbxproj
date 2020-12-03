@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE19CCE22578F2CE000F1C08 /* MultiGumballMachineMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19CCE12578F2CE000F1C08 /* MultiGumballMachineMenu.swift */; };
+		CE19CCE52578F715000F1C08 /* MultiGumballMachineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19CCE42578F715000F1C08 /* MultiGumballMachineController.swift */; };
 		CE833DD9257792490001C094 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DD8257792490001C094 /* main.swift */; };
 		CE833DE9257793AF0001C094 /* MultiGumballMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE1257793AF0001C094 /* MultiGumballMachine.swift */; };
 		CE833DEA257793AF0001C094 /* MultiGumballMachineContextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE833DE2257793AF0001C094 /* MultiGumballMachineContextProtocol.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE19CCE12578F2CE000F1C08 /* MultiGumballMachineMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiGumballMachineMenu.swift; sourceTree = "<group>"; };
+		CE19CCE42578F715000F1C08 /* MultiGumballMachineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiGumballMachineController.swift; sourceTree = "<group>"; };
 		CE833DD5257792490001C094 /* MultiGumballMachine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MultiGumballMachine; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE833DD8257792490001C094 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		CE833DE1257793AF0001C094 /* MultiGumballMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiGumballMachine.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				CE833DE2257793AF0001C094 /* MultiGumballMachineContextProtocol.swift */,
 				CE833DE3257793AF0001C094 /* State */,
 				CE833DD8257792490001C094 /* main.swift */,
+				CE19CCE12578F2CE000F1C08 /* MultiGumballMachineMenu.swift */,
+				CE19CCE42578F715000F1C08 /* MultiGumballMachineController.swift */,
 			);
 			path = MultiGumballMachine;
 			sourceTree = "<group>";
@@ -334,10 +340,12 @@
 				CE833E162577ABBE0001C094 /* State.swift in Sources */,
 				CE833DEA257793AF0001C094 /* MultiGumballMachineContextProtocol.swift in Sources */,
 				CE833DEE257793AF0001C094 /* SoldOutState.swift in Sources */,
+				CE19CCE22578F2CE000F1C08 /* MultiGumballMachineMenu.swift in Sources */,
 				CE833DED257793AF0001C094 /* HasQuarterState.swift in Sources */,
 				CE833DEF257793AF0001C094 /* SoldState.swift in Sources */,
 				CE833DD9257792490001C094 /* main.swift in Sources */,
 				CE833E142577AB880001C094 /* NaiveMultiGumballMachine.swift in Sources */,
+				CE19CCE52578F715000F1C08 /* MultiGumballMachineController.swift in Sources */,
 				CE833DEC257793AF0001C094 /* NoQuarterState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
