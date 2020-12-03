@@ -239,6 +239,8 @@ class MultiGumballMachineTests: XCTestCase {
     naiveMachine.insertQuarter()
     naiveMachine.insertQuarter()
     
+    naiveMachine.ejectQuarter()
+    
     XCTAssertEqual(expectedOut, naiveOutStream.logs)
   }
   
@@ -265,7 +267,7 @@ class MultiGumballMachineTests: XCTestCase {
     XCTAssertEqual(expectedMessage, outStream.lastLog)
     
     let naiveOutStream = TextStream.OStream(type: .logs)
-    let naiveMachine = NaiveMultiGumballMachine(numBalls: 5, outStream: naiveOutStream)
+    let naiveMachine = NaiveMultiGumballMachine(numBalls: 3, outStream: naiveOutStream)
     
     naiveMachine.insertQuarter()
     naiveMachine.insertQuarter()

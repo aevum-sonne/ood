@@ -107,6 +107,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE19CCE925790F40000F1C08 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE19CCE42578F715000F1C08 /* MultiGumballMachineController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE19CCEB25790F47000F1C08 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				CE19CCE12578F2CE000F1C08 /* MultiGumballMachineMenu.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		CE833DCC257792490001C094 = {
 			isa = PBXGroup;
 			children = (
@@ -130,13 +146,13 @@
 		CE833DD7257792490001C094 /* MultiGumballMachine */ = {
 			isa = PBXGroup;
 			children = (
+				CE19CCEB25790F47000F1C08 /* Menu */,
+				CE19CCE925790F40000F1C08 /* Controller */,
 				CE833DE1257793AF0001C094 /* MultiGumballMachine.swift */,
 				CE833E0F257797530001C094 /* MultiGumballMachineProtocol.swift */,
 				CE833DE2257793AF0001C094 /* MultiGumballMachineContextProtocol.swift */,
 				CE833DE3257793AF0001C094 /* State */,
 				CE833DD8257792490001C094 /* main.swift */,
-				CE19CCE12578F2CE000F1C08 /* MultiGumballMachineMenu.swift */,
-				CE19CCE42578F715000F1C08 /* MultiGumballMachineController.swift */,
 			);
 			path = MultiGumballMachine;
 			sourceTree = "<group>";
