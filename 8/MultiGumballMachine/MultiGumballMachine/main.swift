@@ -9,24 +9,9 @@
 import Foundation
 import TextStream
 
-func playWithMultiGumballMachine(gumballMachine: MultiGumballMachineProtocol) {
-  gumballMachine.insertQuarter()
-  gumballMachine.insertQuarter()
-  gumballMachine.turnCrank()
-  gumballMachine.insertQuarter()
-  gumballMachine.insertQuarter()
-  gumballMachine.turnCrank()
-  gumballMachine.insertQuarter()
-  
-  gumballMachine.turnCrank()
-  gumballMachine.turnCrank()
-  
-  gumballMachine.ejectQuarter()
-    
-  print(gumballMachine.toString())
-}
-
 let outStream = TextStream.OStream(type: .console)
-let gumballMachine = MultiGumballMachine(numBalls: 4, outStream: outStream)
+let inStream = TextStream.IStream()
 
-playWithMultiGumballMachine(gumballMachine: gumballMachine)
+let controller = MultiGumballMachineController(inStream: inStream, outStream: outStream)
+
+controller.run()

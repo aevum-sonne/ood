@@ -9,8 +9,11 @@
 import Foundation
 
 protocol MultiGumballMachineProtocol {
-  func ejectQuarter()
   func insertQuarter()
+  func ejectQuarter()
+  
+  func insertGumball()
+  
   func turnCrank()
   
   func toString() -> String
