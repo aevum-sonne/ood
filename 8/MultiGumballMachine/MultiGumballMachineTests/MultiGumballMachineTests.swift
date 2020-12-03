@@ -282,11 +282,50 @@ class MultiGumballMachineTests: XCTestCase {
     gumballMachine.turnCrank()
     
     XCTAssertEqual(expectedMessage, outStream.lastLog)
+    
+    let naiveOutStream = TextStream.OStream(type: .logs)
+    let naiveMachine = NaiveMultiGumballMachine(numBalls: 5, outStream: naiveOutStream)
+    
+    naiveMachine.turnCrank()
+    
+    XCTAssertEqual(expectedMessage, naiveOutStream.lastLog)
   }
   
   
   // MARK: SoldOutState tests
   
+  func testCorrectSoldOutStateEjectQuarterIfQuarterInMachine() {
+    let expectedMessage = "1 quarter returned"
+    
+    let outStream = TextStream.OStream(type: .logs)
+    let gumballMachine = MultiGumballMachine(numBalls: 1, outStream: outStream)
+    
+    gumballMachine.insertQuarter()
+    gumballMachine.insertQuarter()
+    gumballMachine.turnCrank()
+    
+    gumballMachine.ejectQuarter()
+    
+    XCTAssertEqual(expectedMessage, outStream.lastLog)
+  }
   
+  func testCorrectSoldOutStateEjectQuarterIfQuartersInMachine() {
+    let expectedMessage = "4 quarters returned"
+    
+    let outStream = TextStream.OStream(type: .logs)
+    let gumballMachine = MultiGumballMachine(numBalls: 1, outStream: outStream)
+    
+    gumballMachine.insertQuarter()
+    gumballMachine.insertQuarter()
+    gumballMachine.insertQuarter()
+    gumballMachine.insertQuarter()
+    gumballMachine.insertQuarter()
+
+    gumballMachine.turnCrank()
+    
+    gumballMachine.ejectQuarter()
+    
+    XCTAssertEqual(expectedMessage, outStream.lastLog)
+  }
 
 }
